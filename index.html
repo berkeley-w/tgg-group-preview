@@ -1,13 +1,66 @@
+<!-- TODO: Minify CSS and JS before production deployment. Current file is unminified for development. -->
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en-HK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Security headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://static.wixstatic.com https://*.wixstatic.com; connect-src 'self'; frame-ancestors 'none';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <title>TGG Group — Private Investment Group</title>
-  <meta name="description" content="TGG Group is an Asia-based private investment group building for The Greatest Good across lifestyle, sports, media, and alternative investments.">
+
+  <!-- SEO -->
+  <meta name="description" content="TGG Group is an Asia-based private investment group investing with conviction across lifestyle, sports, media, and alternative strategies.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.tgg-group.com/">
+
+  <!-- Open Graph -->
   <meta property="og:title" content="TGG Group — Private Investment Group">
-  <meta property="og:description" content="Building for The Greatest Good. An Asia-based private investment group.">
+  <meta property="og:description" content="An Asia-based private investment group investing with conviction across lifestyle, sports, media, and alternative strategies.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tgg-group.com/">
+  <!-- TODO: Create a 1200×630 OG image crop of hero.jpg for social previews -->
+  <meta property="og:image" content="./hero.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_HK">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TGG Group — Private Investment Group">
+  <meta name="twitter:description" content="An Asia-based private investment group investing with conviction across lifestyle, sports, media, and alternative strategies.">
+  <meta name="twitter:image" content="./hero.jpg">
+
+  <!-- Favicon -->
+  <!-- TODO: Replace with proper TGG favicon file -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231C3D2E'/><text x='50' y='68' font-size='48' fill='white' text-anchor='middle' font-family='serif'>T</text></svg>">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TGG Group",
+    "description": "An Asia-based private investment group investing across lifestyle, sports, media, and alternative strategies.",
+    "url": "https://www.tgg-group.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hong Kong",
+      "addressRegion": "Hong Kong SAR",
+      "addressCountry": "HK"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@tgg-group.com",
+      "contactType": "general"
+    },
+    "sameAs": []
+  }
+  </script>
 
   <!-- Fonts: Libre Baskerville (headings) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,7 +154,25 @@
     p { text-wrap: pretty; }
     button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
     a { color: inherit; text-decoration: none; }
-    :focus-visible { outline: 1px solid var(--primary); outline-offset: 3px; }
+    /* Skip navigation link */
+    .skip-link {
+      position: absolute; top: -100%; left: var(--space-4); z-index: 9999;
+      padding: var(--space-2) var(--space-4);
+      background: var(--primary); color: #fff;
+      font-size: var(--text-sm); font-weight: 500;
+      border-radius: 0 0 4px 4px; transition: top 0.2s;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+
+    :focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+    .nav :focus-visible { outline-color: #fff; }
+    /* Hide focus ring on programmatic focus (screen-reader focus management); show only on keyboard navigation */
+    :focus:not(:focus-visible) { outline: none; }
 
     .sr-only {
       position: absolute; width: 1px; height: 1px; padding: 0;
@@ -121,8 +192,8 @@
     /* ============================================================
        HASH-ROUTED PAGES
     ============================================================ */
-    .page { display: none; }
-    .page.active { display: block; animation: fadeIn 0.2s ease forwards; }
+    .page { display: none; content-visibility: auto; contain-intrinsic-size: auto 600px; }
+    .page.active { display: block; animation: fadeIn 0.2s ease forwards; content-visibility: visible; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     /* ============================================================
@@ -283,19 +354,6 @@
       padding: 0 clamp(var(--space-6), 5vw, var(--space-16));
     }
 
-    .hero__eyebrow {
-      font-family: var(--font-body);
-      font-size: var(--text-xs); font-weight: 500;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--hero-muted);
-      margin-bottom: var(--space-8);
-      display: flex; align-items: center; justify-content: center; gap: var(--space-5);
-    }
-    .hero__eyebrow::before, .hero__eyebrow::after {
-      content: ''; display: block;
-      width: 32px; height: 1px; background: currentColor; opacity: 0.6;
-    }
-
     .hero__headline {
       font-family: var(--font-display);
       font-size: var(--text-3xl);
@@ -330,42 +388,6 @@
     .text-link:hover { opacity: 0.6; }
     .text-link svg { transition: transform var(--transition); }
     .text-link:hover svg { transform: translateX(3px); }
-
-    /* ============================================================
-       LIT BADGE
-    ============================================================ */
-    .lit-wrap { position: relative; display: inline-block; }
-
-    .lit-badge {
-      position: absolute;
-      top: -7px; right: -7px;
-      background: var(--primary);
-      color: #F0EDE6;
-      font-family: var(--font-body);
-      font-size: 0.55rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 2px 5px;
-      border-radius: 2px;
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    [data-theme="dark"] .lit-badge { background: var(--primary); color: #111510; }
-
-    /* Portfolio card LIT badge (absolute within pf-card) */
-    .pf-lit-badge {
-      position: absolute;
-      top: var(--space-4); right: var(--space-4);
-      background: var(--primary);
-      color: #F0EDE6;
-      font-family: var(--font-body);
-      font-size: 0.58rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      padding: 3px 7px; border-radius: 2px; line-height: 1;
-    }
-    [data-theme="dark"] .pf-lit-badge { background: var(--primary); color: #111510; }
 
     /* ============================================================
        PAGE HEADER
@@ -775,6 +797,40 @@
       .footer__inner { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
     }
 
+    /* ============================================================
+       COOKIE BANNER
+    ============================================================ */
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: var(--primary); color: #fff;
+      padding: var(--space-3) 0; font-size: var(--text-xs);
+    }
+    .cookie-banner .container {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: var(--space-4); flex-wrap: wrap;
+    }
+    .cookie-banner p { margin: 0; opacity: 0.85; line-height: 1.5; }
+    .cookie-banner a { color: #fff; text-decoration: underline; }
+    .cookie-banner__btn {
+      background: rgba(255,255,255,0.15); color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: var(--space-1) var(--space-4); border-radius: 4px;
+      font-size: var(--text-xs); font-weight: 500;
+      white-space: nowrap; cursor: pointer; flex-shrink: 0;
+    }
+    .cookie-banner__btn:hover { background: rgba(255,255,255,0.25); }
+
+    /* ============================================================
+       PRINT
+    ============================================================ */
+    @media print {
+      .nav, .footer, .cookie-banner, .skip-link { display: none !important; }
+      .page { display: block !important; break-inside: avoid;
+              content-visibility: visible !important; }
+      body { color: #000; background: #fff; }
+      a[href^="mailto:"]::after { content: " (" attr(href) ")"; }
+    }
+
     .footer__disclaimer {
       font-size: var(--text-xs); color: var(--text-faint);
       text-align: center; margin-top: var(--space-5);
@@ -817,6 +873,8 @@
 
 <body>
 
+  <a href="#main" class="skip-link">Skip to main content</a>
+
   <!-- ============================================================
        NAVIGATION
   ============================================================ -->
@@ -836,7 +894,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <button class="nav__burger" id="burger-btn" aria-label="Open menu">
+        <button class="nav__burger" id="burger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <line x1="3" y1="6"  x2="21" y2="6"/>
             <line x1="3" y1="12" x2="21" y2="12"/>
@@ -1018,7 +1076,7 @@
               <div class="team-card">
                 <div class="team-card__photo">
                   <img src="https://static.wixstatic.com/media/b24b09_d1a3701580fd401e8be0ca4e8beb058f~mv2.png"
-                       alt="Barry" loading="lazy">
+                       alt="Barry, Principal at TGG Group" loading="lazy" decoding="async" width="400" height="400">
                   <!-- Replace with actual headshot: Barry -->
                 </div>
                 <div class="team-card__name">Barry</div>
@@ -1029,7 +1087,7 @@
               <div class="team-card">
                 <div class="team-card__photo">
                   <img src="https://static.wixstatic.com/media/b24b09_cddb2fd484f64d31b1ede8321143e011~mv2.png"
-                       alt="Eric" loading="lazy">
+                       alt="Eric, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
                   <!-- Replace with actual headshot: Eric -->
                 </div>
                 <div class="team-card__name">Eric</div>
@@ -1040,7 +1098,7 @@
               <div class="team-card">
                 <div class="team-card__photo">
                   <img src="https://static.wixstatic.com/media/b24b09_ba566758ce37491e9fccf0637bdddc83~mv2.png"
-                       alt="Andre" loading="lazy">
+                       alt="Andre, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
                   <!-- Replace with actual headshot: Andre -->
                 </div>
                 <div class="team-card__name">Andre</div>
@@ -1051,7 +1109,7 @@
               <div class="team-card">
                 <div class="team-card__photo">
                   <img src="https://static.wixstatic.com/media/b24b09_b17c0d9a683a45d2b594e05a68051310~mv2.png"
-                       alt="Jo" loading="lazy">
+                       alt="Jo, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
                   <!-- Replace with actual headshot: Jo -->
                 </div>
                 <div class="team-card__name">Jo</div>
@@ -1062,7 +1120,7 @@
               <div class="team-card">
                 <div class="team-card__photo">
                   <img src="https://static.wixstatic.com/media/b24b09_f6a465550d49434b99337681eb1a55cc~mv2.png"
-                       alt="Anthony" loading="lazy">
+                       alt="Anthony, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
                   <!-- Replace with actual headshot: Anthony -->
                 </div>
                 <div class="team-card__name">Anthony</div>
@@ -1073,7 +1131,7 @@
               <div class="team-card">
                 <div class="team-card__photo">
                   <img src="https://static.wixstatic.com/media/b24b09_13a0dd1231dd4ca39ebff4b2ccb6bd50~mv2.png"
-                       alt="CK" loading="lazy">
+                       alt="CK, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
                   <!-- Replace with actual headshot: CK -->
                 </div>
                 <div class="team-card__name">CK</div>
@@ -1084,7 +1142,7 @@
               <div class="team-card">
                 <div class="team-card__photo">
                   <img src="https://static.wixstatic.com/media/b24b09_c9f24e56f5d34757beb3f48050cf721a~mv2.png"
-                       alt="Zoe" loading="lazy">
+                       alt="Zoe, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
                   <!-- Replace with actual headshot: Zoe -->
                 </div>
                 <div class="team-card__name">Zoe</div>
@@ -1095,7 +1153,7 @@
               <div class="team-card">
                 <div class="team-card__photo">
                   <img src="https://static.wixstatic.com/media/b24b09_fa1298124a7c48fe8d045df98c79f7f9~mv2.jpg"
-                       alt="Angela" loading="lazy">
+                       alt="Angela, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
                   <!-- Replace with actual headshot: Angela -->
                 </div>
                 <div class="team-card__name">Angela</div>
@@ -1119,14 +1177,13 @@
               <!-- Ocean Vines Photo Gallery -->
               <div class="ov-gallery" role="list" aria-label="Ocean Vines photos">
                 <!-- Replace with actual Ocean Vines photos from tgg.holdings/givingback -->
+                <!-- TODO: Convert all images to WebP format for production -->
                 <img src="https://static.wixstatic.com/media/b24b09_54d9305e673246d196e7cd75c95f9e85~mv2.jpg"
-                     alt="Ocean Vines charity gala" loading="lazy">
-                <!-- Replace with actual Ocean Vines photo URL -->
+                     alt="Ocean Vines charity gala event in Hong Kong" loading="lazy" decoding="async" width="600" height="400">
                 <img src="https://static.wixstatic.com/media/b24b09_05dabdabefa548fe8f94a85093de9fad~mv2.jpeg"
-                     alt="Ocean cleanup event" loading="lazy">
-                <!-- Replace with actual Ocean Vines photo URL -->
+                     alt="Ocean Vines beach cleanup event in Hong Kong" loading="lazy" decoding="async" width="600" height="400">
                 <img src="https://static.wixstatic.com/media/b24b09_ee487953cd4a434bab6c7d7aa242568e~mv2.jpg"
-                     alt="Ocean Vines community event" loading="lazy">
+                     alt="Ocean Vines community conservation event" loading="lazy" decoding="async" width="600" height="400">
               </div>
             </div>
           </div>
@@ -1564,29 +1621,6 @@
     /* ============================================================ */
 
 
-    /* ── Dark mode ─────────────────────────────────────────────── */
-    (function () {
-      const btn  = document.querySelector('[data-theme-toggle]');
-      const root = document.documentElement;
-      let theme  = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', theme);
-
-      function icon() {
-        if (!btn) return;
-        btn.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
-        btn.innerHTML = theme === 'dark'
-          ? '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-          : '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-      }
-      icon();
-      if (btn) btn.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', theme);
-        icon();
-      });
-    })();
-
-
     /* ── Navigation state ──────────────────────────────────────── */
     const navEl = document.getElementById('nav');
 
@@ -1604,11 +1638,23 @@
       const menu    = document.getElementById('mobile-menu');
       const openBtn = document.getElementById('burger-btn');
       const closeBtn = document.getElementById('menu-close-btn');
-      const open  = () => { menu.classList.add('open');    document.body.style.overflow = 'hidden'; };
-      const close = () => { menu.classList.remove('open'); document.body.style.overflow = ''; };
+      const open  = () => {
+        menu.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        openBtn.setAttribute('aria-expanded', 'true');
+      };
+      const close = () => {
+        menu.classList.remove('open');
+        document.body.style.overflow = '';
+        openBtn.setAttribute('aria-expanded', 'false');
+      };
       openBtn.addEventListener('click', open);
       closeBtn.addEventListener('click', close);
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+      // Close on Escape key
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && menu.classList.contains('open')) close();
+      });
     })();
 
 
@@ -1643,9 +1689,20 @@
     const PAGES    = ['home','about','portfolio','news','contact','privacy','terms'];
     const navLinks = document.querySelectorAll('.nav__links a, .mobile-menu__links a');
 
+    const PAGE_TITLES = {
+      '#home':      'TGG Group — Private Investment Group',
+      '#about':     'About — TGG Group',
+      '#portfolio': 'Portfolio — TGG Group',
+      '#news':      'News — TGG Group',
+      '#contact':   'Contact — TGG Group',
+      '#privacy':   'Privacy Policy — TGG Group',
+      '#terms':     'Terms of Use — TGG Group',
+    };
+
     function showPage(hash) {
       const id      = (hash.replace('#', '') || 'home');
       const validId = PAGES.includes(id) ? id : 'home';
+      const validHash = '#' + validId;
 
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       const target = document.getElementById('page-' + validId);
@@ -1653,19 +1710,91 @@
 
       window.scrollTo(0, 0);
 
+      // Dynamic page title
+      document.title = PAGE_TITLES[validHash] || PAGE_TITLES['#home'];
+
       navLinks.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + validId);
+        a.classList.toggle('active', a.getAttribute('href') === validHash);
       });
 
       updateNavStyle();
+
+      // Focus management for screen readers
+      if (target) {
+        const heading = target.querySelector('h1');
+        if (heading) {
+          heading.setAttribute('tabindex', '-1');
+          heading.focus({ preventScroll: true });
+        }
+      }
     }
 
     window.addEventListener('hashchange', () => showPage(window.location.hash));
+
+    /* ── Dynamic copyright year ────────────────────────────────── */
+    document.querySelectorAll('.footer__copy').forEach(el => {
+      el.textContent = '© ' + new Date().getFullYear() + ' TGG Group. All rights reserved.';
+    });
+
+    /* ── Cookie banner ─────────────────────────────────────────── */
+    (function () {
+      const banner = document.getElementById('cookie-banner');
+      if (!banner) return;
+      // Use localStorage to remember consent (production implementation)
+      try {
+        if (localStorage.getItem('tgg_cookies_accepted')) {
+          banner.style.display = 'none';
+          return;
+        }
+      } catch(e) { /* localStorage may be unavailable in sandboxed environments */ }
+      banner.style.display = '';
+      document.getElementById('cookie-accept-btn').addEventListener('click', () => {
+        banner.style.display = 'none';
+        try { localStorage.setItem('tgg_cookies_accepted', '1'); } catch(e) {}
+      });
+    })();
 
     renderNewsPreview();
     renderNewsFull();
     showPage(window.location.hash || '#home');
   </script>
+
+  <!-- Cookie consent banner (hidden by default; shown if localStorage consent not set) -->
+  <div class="cookie-banner" id="cookie-banner" role="alert" style="display:none;">
+    <div class="container">
+      <p>This website uses cookies for basic functionality. By continuing, you consent to our use of cookies. <a href="#privacy">Learn more</a></p>
+      <button class="cookie-banner__btn" id="cookie-accept-btn" aria-label="Accept cookies">Accept</button>
+    </div>
+  </div>
+
+  <!-- QA FIXES APPLIED:
+    - Added skip-to-content link
+    - Removed dark mode toggle (button + JS IIFE)
+    - Added JSON-LD Organization schema
+    - Added canonical, robots, og:url, og:image, og:locale, og:image dimensions meta tags
+    - Added Twitter Card meta tags
+    - Added CSP, X-Content-Type-Options, X-Frame-Options, Referrer-Policy headers
+    - Added SVG favicon with TGG green
+    - Removed orphan CSS: .hero__eyebrow, .lit-badge, .lit-wrap, .pf-lit-badge
+    - Added content-visibility: auto to .page (off-screen rendering optimisation)
+    - Updated :focus-visible to 2px outline; added white outline override for .nav
+    - Added print CSS
+    - Added cookie banner CSS + HTML + localStorage JS
+    - Added dynamic page title on hash change
+    - Added focus management after hash navigation (h1 receives focus)
+    - Added aria-expanded + aria-controls to burger button; toggles correctly
+    - Added Escape key handler to close mobile menu
+    - Added dynamic copyright year via JS
+    - Updated all team headshot alt text to descriptive format
+    - Added decoding="async" + width/height to all team and gallery images
+    - Updated Ocean Vines gallery alt text to descriptive strings
+    - Added TODO comments for WebP conversion and OG image crop
+    - lang attribute updated to en-HK
+    - Confirmed no console.log, no exposed secrets, no sensitive comments
+    - Confirmed no remaining "family office" references in visible content
+    - Confirmed all footer links resolve to valid hash routes
+    - Confirmed heading hierarchy: h1 per page, h2 for sections, h3 not skipped
+  -->
 
 </body>
 </html>
