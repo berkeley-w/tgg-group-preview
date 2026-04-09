@@ -1737,20 +1737,14 @@
     });
 
     /* ── Cookie banner ─────────────────────────────────────────── */
+    /* NOTE: Production should persist consent to localStorage/cookie.
+       sessionStorage/localStorage not available in sandboxed preview environments. */
     (function () {
       const banner = document.getElementById('cookie-banner');
       if (!banner) return;
-      // Use localStorage to remember consent (production implementation)
-      try {
-        if (localStorage.getItem('tgg_cookies_accepted')) {
-          banner.style.display = 'none';
-          return;
-        }
-      } catch(e) { /* localStorage may be unavailable in sandboxed environments */ }
       banner.style.display = '';
       document.getElementById('cookie-accept-btn').addEventListener('click', () => {
         banner.style.display = 'none';
-        try { localStorage.setItem('tgg_cookies_accepted', '1'); } catch(e) {}
       });
     })();
 
