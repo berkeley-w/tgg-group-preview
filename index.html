@@ -173,6 +173,7 @@
     .nav :focus-visible { outline-color: #fff; }
     /* Hide focus ring on programmatic focus (screen-reader focus management); show only on keyboard navigation */
     :focus:not(:focus-visible) { outline: none; }
+    [tabindex="-1"]:focus { outline: none !important; }
 
     .sr-only {
       position: absolute; width: 1px; height: 1px; padding: 0;
