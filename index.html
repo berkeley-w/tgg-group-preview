@@ -256,7 +256,7 @@
     ============================================================ */
     .hero {
       position: relative;
-      min-height: 100dvh;
+      min-height: 75vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -409,6 +409,10 @@
       color: var(--text-muted); line-height: 1.75; max-width: 60ch;
     }
     .intro-strip__body .text-link { margin-top: var(--space-6); }
+
+    @media (max-width: 680px) {
+      .hero { min-height: 65vh; }
+    }
 
     @media (max-width: 640px) {
       .intro-strip__grid { grid-template-columns: 1fr; gap: var(--space-5); }
@@ -770,6 +774,44 @@
     @media (max-width: 600px) {
       .footer__inner { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
     }
+
+    .footer__disclaimer {
+      font-size: var(--text-xs); color: var(--text-faint);
+      text-align: center; margin-top: var(--space-5);
+      padding-top: var(--space-4); border-top: 1px solid var(--border);
+      line-height: 1.6;
+    }
+    .footer__disclaimer a { color: var(--text-faint); text-decoration: underline; }
+    .footer__disclaimer a:hover { color: var(--text-muted); }
+
+    /* ============================================================
+       LEGAL PAGES (Privacy Policy, Terms of Use)
+    ============================================================ */
+    .legal-body {
+      max-width: 720px;
+      padding: clamp(var(--space-12), 5vw, var(--space-20)) 0
+               clamp(var(--space-16), 7vw, var(--space-24));
+    }
+    .legal-body h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-lg); font-weight: 400;
+      color: var(--text); margin-top: var(--space-10);
+      margin-bottom: var(--space-3); line-height: 1.2;
+    }
+    .legal-body h2:first-child { margin-top: 0; }
+    .legal-body p {
+      font-size: var(--text-base); font-weight: 400;
+      color: var(--text-muted); line-height: 1.78;
+      margin-bottom: var(--space-4);
+    }
+    .legal-body p:last-of-type { margin-bottom: 0; }
+    .legal-body a { color: var(--primary); text-decoration: underline; }
+    .legal-body a:hover { opacity: 0.75; }
+    .legal-last-updated {
+      font-size: var(--text-xs); font-weight: 400;
+      color: var(--text-faint); margin-top: var(--space-10);
+      padding-top: var(--space-6); border-top: 1px solid var(--border);
+    }
   </style>
 </head>
 
@@ -935,10 +977,11 @@
             <span class="footer__copy">© 2026 TGG Group. All rights reserved.</span>
             <ul class="footer__links" role="list">
               <li><a href="mailto:info@tgg-group.com">info@tgg-group.com</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#terms">Terms of Use</a></li>
             </ul>
           </div>
+          <p class="footer__disclaimer">This website is for informational purposes only and does not constitute an offer or solicitation. <a href="#terms">Terms of Use</a> · <a href="#privacy">Privacy Policy</a></p>
         </div>
       </footer>
 
@@ -962,7 +1005,7 @@
           <div class="prose-block__grid">
             <h2 class="prose-block__heading">Background</h2>
             <div class="prose-block__body">
-              <p>TGG Group is a single family office headquartered in Hong Kong, guided by the vision of celebrating The Greatest Good for all. Guided by our overall vision, we have purposefully assembled a small but mighty team on a mission — TGG Ventures is the financial arm of the Group.</p>
+              <p>TGG Group is an Asia-based private investment group headquartered in Hong Kong, guided by the vision of celebrating The Greatest Good for all. Guided by our overall vision, we have purposefully assembled a small but mighty team on a mission — TGG Ventures is the financial arm of the Group.</p>
               <p>Our core team previously managed significant pools of capital across Sovereign Wealth Funds, Pension Funds, Insurance Companies, and other global Family Offices. Our journey has been defined by successfully navigating the complexities of global markets across diverse asset classes.</p>
               <p>We actively seek to nurture and enhance the value of our strategic holdings under the brand of "Lit". With an institutional foundation, we remain humble and nimble as entrepreneurs to generate value in all we do.</p>
             </div>
@@ -1104,10 +1147,11 @@
             <span class="footer__copy">© 2026 TGG Group. All rights reserved.</span>
             <ul class="footer__links" role="list">
               <li><a href="mailto:info@tgg-group.com">info@tgg-group.com</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#terms">Terms of Use</a></li>
             </ul>
           </div>
+          <p class="footer__disclaimer">This website is for informational purposes only and does not constitute an offer or solicitation. <a href="#terms">Terms of Use</a> · <a href="#privacy">Privacy Policy</a></p>
         </div>
       </footer>
 
@@ -1240,10 +1284,11 @@
             <span class="footer__copy">© 2026 TGG Group. All rights reserved.</span>
             <ul class="footer__links" role="list">
               <li><a href="mailto:info@tgg-group.com">info@tgg-group.com</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#terms">Terms of Use</a></li>
             </ul>
           </div>
+          <p class="footer__disclaimer">This website is for informational purposes only and does not constitute an offer or solicitation. <a href="#terms">Terms of Use</a> · <a href="#privacy">Privacy Policy</a></p>
         </div>
       </footer>
 
@@ -1276,10 +1321,11 @@
             <span class="footer__copy">© 2026 TGG Group. All rights reserved.</span>
             <ul class="footer__links" role="list">
               <li><a href="mailto:info@tgg-group.com">info@tgg-group.com</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#terms">Terms of Use</a></li>
             </ul>
           </div>
+          <p class="footer__disclaimer">This website is for informational purposes only and does not constitute an offer or solicitation. <a href="#terms">Terms of Use</a> · <a href="#privacy">Privacy Policy</a></p>
         </div>
       </footer>
 
@@ -1316,10 +1362,151 @@
             <span class="footer__copy">© 2026 TGG Group. All rights reserved.</span>
             <ul class="footer__links" role="list">
               <li><a href="mailto:info@tgg-group.com">info@tgg-group.com</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#terms">Terms of Use</a></li>
             </ul>
           </div>
+          <p class="footer__disclaimer">This website is for informational purposes only and does not constitute an offer or solicitation. <a href="#terms">Terms of Use</a> · <a href="#privacy">Privacy Policy</a></p>
+        </div>
+      </footer>
+
+    </section>
+
+    <!-- ============================================================
+         PAGE: PRIVACY POLICY  (#privacy)
+    ============================================================ -->
+    <section class="page" id="page-privacy" aria-label="Privacy Policy">
+
+      <div class="page-header">
+        <div class="container">
+          <span class="label page-header__label">Legal</span>
+          <h1 class="page-header__title">Privacy Policy</h1>
+        </div>
+      </div>
+
+      <div class="section" style="border-bottom: none;">
+        <div class="container">
+          <div class="legal-body">
+
+            <h2>1. Introduction</h2>
+            <p>TGG Group (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) is committed to protecting the privacy of visitors to this website. This policy explains how we collect, use, and safeguard personal information in accordance with the Personal Data (Privacy) Ordinance (Cap. 486) of Hong Kong.</p>
+
+            <h2>2. Information We Collect</h2>
+            <p>We do not collect personal data through this website unless you voluntarily provide it (e.g., by contacting us via email). We may collect non-personally identifiable information such as browser type, access times, and referring URLs through standard server logs or analytics tools.</p>
+
+            <h2>3. Use of Information</h2>
+            <p>Any personal data you provide (e.g., name, email address) will be used solely for the purpose of responding to your inquiry. We will not use your personal data for direct marketing without your prior consent.</p>
+
+            <h2>4. Disclosure to Third Parties</h2>
+            <p>We do not sell, trade, or rent personal data to third parties. We may disclose personal data where required by law, regulation, or court order, or where necessary to protect our legitimate interests.</p>
+
+            <h2>5. Data Security</h2>
+            <p>We implement reasonable technical and organisational measures to protect personal data against unauthorised access, loss, or misuse. No method of electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+
+            <h2>6. Cookies</h2>
+            <p>This website may use cookies or similar technologies for basic functionality and analytics purposes. You may disable cookies through your browser settings, though this may affect website functionality.</p>
+
+            <h2>7. Third-Party Links</h2>
+            <p>This website may contain links to external sites. We are not responsible for the privacy practices or content of those sites.</p>
+
+            <h2>8. Your Rights</h2>
+            <p>Under the Personal Data (Privacy) Ordinance, you have the right to request access to and correction of your personal data held by us. Requests should be directed to: <a href="mailto:info@tgg-group.com">info@tgg-group.com</a></p>
+
+            <h2>9. Changes to This Policy</h2>
+            <p>We may update this policy from time to time. The revised version will be effective when posted on this website.</p>
+
+            <h2>10. Contact</h2>
+            <p>For privacy-related inquiries, please contact: <a href="mailto:info@tgg-group.com">info@tgg-group.com</a></p>
+
+            <p class="legal-last-updated">Last updated: April 2026</p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="container">
+          <div class="footer__inner">
+            <span class="footer__brand">TGG Group</span>
+            <span class="footer__copy">&copy; 2026 TGG Group. All rights reserved.</span>
+            <ul class="footer__links" role="list">
+              <li><a href="mailto:info@tgg-group.com">info@tgg-group.com</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#terms">Terms of Use</a></li>
+            </ul>
+          </div>
+          <p class="footer__disclaimer">This website is for informational purposes only and does not constitute an offer or solicitation. <a href="#terms">Terms of Use</a> &middot; <a href="#privacy">Privacy Policy</a></p>
+        </div>
+      </footer>
+
+    </section>
+
+    <!-- ============================================================
+         PAGE: TERMS OF USE  (#terms)
+    ============================================================ -->
+    <section class="page" id="page-terms" aria-label="Terms of Use">
+
+      <div class="page-header">
+        <div class="container">
+          <span class="label page-header__label">Legal</span>
+          <h1 class="page-header__title">Terms of Use</h1>
+        </div>
+      </div>
+
+      <div class="section" style="border-bottom: none;">
+        <div class="container">
+          <div class="legal-body">
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using this website, you agree to be bound by these Terms of Use. If you do not agree, please do not use this website.</p>
+
+            <h2>2. About This Website</h2>
+            <p>This website is operated by TGG Group. The content is provided for general informational purposes only and does not constitute investment advice, an offer, or a solicitation of an offer to buy or sell any securities or financial instruments.</p>
+
+            <h2>3. No Investment Advice</h2>
+            <p>Nothing on this website should be construed as investment, financial, legal, or tax advice. You should consult qualified professional advisers before making any investment decisions. Past performance of any investment or business referenced on this site is not indicative of future results.</p>
+
+            <h2>4. Intellectual Property</h2>
+            <p>All content on this website &mdash; including text, graphics, logos, images, and design &mdash; is the property of TGG Group or its licensors and is protected by applicable intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any content without our prior written consent.</p>
+
+            <h2>5. Accuracy of Information</h2>
+            <p>While we endeavour to keep the information on this website accurate and up to date, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or suitability of the information. Information may be changed or updated without notice.</p>
+
+            <h2>6. Limitation of Liability</h2>
+            <p>To the fullest extent permitted by law, TGG Group shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of or inability to use this website. This includes, without limitation, any reliance on information provided on the website.</p>
+
+            <h2>7. Third-Party Links</h2>
+            <p>This website may contain links to third-party websites. These links are provided for convenience only and do not imply endorsement. We have no control over and accept no responsibility for the content or practices of linked sites.</p>
+
+            <h2>8. Governing Law</h2>
+            <p>These Terms of Use shall be governed by and construed in accordance with the laws of the Hong Kong Special Administrative Region. Any disputes arising shall be subject to the exclusive jurisdiction of the courts of Hong Kong.</p>
+
+            <h2>9. Changes to These Terms</h2>
+            <p>We reserve the right to modify these Terms of Use at any time. Your continued use of the website following any changes constitutes acceptance of the revised terms.</p>
+
+            <h2>10. Contact</h2>
+            <p>For questions about these Terms of Use, please contact: <a href="mailto:info@tgg-group.com">info@tgg-group.com</a></p>
+
+            <p class="legal-last-updated">Last updated: April 2026</p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="container">
+          <div class="footer__inner">
+            <span class="footer__brand">TGG Group</span>
+            <span class="footer__copy">&copy; 2026 TGG Group. All rights reserved.</span>
+            <ul class="footer__links" role="list">
+              <li><a href="mailto:info@tgg-group.com">info@tgg-group.com</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#terms">Terms of Use</a></li>
+            </ul>
+          </div>
+          <p class="footer__disclaimer">This website is for informational purposes only and does not constitute an offer or solicitation. <a href="#terms">Terms of Use</a> &middot; <a href="#privacy">Privacy Policy</a></p>
         </div>
       </footer>
 
@@ -1459,7 +1646,7 @@
 
 
     /* ── Hash router ───────────────────────────────────────────── */
-    const PAGES    = ['home','about','portfolio','news','contact'];
+    const PAGES    = ['home','about','portfolio','news','contact','privacy','terms'];
     const navLinks = document.querySelectorAll('.nav__links a, .mobile-menu__links a');
 
     function showPage(hash) {
