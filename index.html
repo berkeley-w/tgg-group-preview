@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TGG Group — Private Family Office</title>
-  <meta name="description" content="TGG Group is a Hong Kong-based private family office building for The Greatest Good across lifestyle, sports, media, and alternative investments.">
-  <meta property="og:title" content="TGG Group — Private Family Office">
-  <meta property="og:description" content="Building for The Greatest Good. A Hong Kong-based single family office.">
+  <title>TGG Group — Private Investment Group</title>
+  <meta name="description" content="TGG Group is an Asia-based private investment group building for The Greatest Good across lifestyle, sports, media, and alternative investments.">
+  <meta property="og:title" content="TGG Group — Private Investment Group">
+  <meta property="og:description" content="Building for The Greatest Good. An Asia-based private investment group.">
   <meta property="og:type" content="website">
 
+  <!-- Fonts: DM Serif Display (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     /* ============================================================
@@ -20,13 +20,14 @@
     ============================================================ */
     :root {
       --text-xs:   clamp(0.75rem,  0.70rem + 0.25vw, 0.875rem);
-      --text-sm:   clamp(0.875rem, 0.80rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
-      --text-lg:   clamp(1.125rem, 1.00rem + 0.75vw, 1.5rem);
-      --text-xl:   clamp(1.5rem,   1.20rem + 1.25vw, 2.25rem);
-      --text-2xl:  clamp(2rem,     1.20rem + 2.50vw, 3.5rem);
-      --text-3xl:  clamp(2.75rem,  1.50rem + 3.50vw, 5.5rem);
+      --text-sm:   clamp(0.875rem, 0.80rem + 0.25vw, 1rem);
+      --text-base: clamp(1rem,     0.95rem + 0.20vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1.00rem + 0.60vw, 1.5rem);
+      --text-xl:   clamp(1.5rem,   1.25rem + 1.00vw, 2.25rem);
+      --text-2xl:  clamp(2rem,     1.30rem + 2.25vw, 3.5rem);
+      --text-3xl:  clamp(2.75rem,  1.60rem + 3.00vw, 5.25rem);
 
+      --space-1:  0.25rem;
       --space-2:  0.5rem;
       --space-3:  0.75rem;
       --space-4:  1rem;
@@ -40,44 +41,42 @@
       --space-24: 6rem;
       --space-32: 8rem;
 
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'Switzer', 'Helvetica Neue', sans-serif;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
       --transition:   200ms cubic-bezier(0.16, 1, 0.3, 1);
       --content:      1100px;
     }
 
+    /* LIGHT MODE */
     :root, [data-theme="light"] {
       --bg:           #F5F3EE;
-      --surface:      #F9F8F4;
+      --surface:      #F0EEE9;
       --text:         #1A1917;
-      --text-muted:   #6E6B64;
-      --text-faint:   #ABA9A4;
+      --text-muted:   #5C5954;
+      --text-faint:   #9A9690;
       --primary:      #1C3D2E;
       --border:       #DDD9D3;
       --divider:      #E8E5DF;
-
-      --hero-bg:      #0D1210;
       --hero-text:    #F0EDE6;
-      --hero-muted:   rgba(240,237,230,0.48);
-      --hero-border:  rgba(240,237,230,0.14);
-      --hero-surface: rgba(240,237,230,0.04);
+      --hero-muted:   rgba(240,237,230,0.60);
+      --hero-border:  rgba(240,237,230,0.22);
+      --hero-surface: rgba(240,237,230,0.06);
     }
 
+    /* DARK MODE */
     [data-theme="dark"] {
       --bg:           #111510;
-      --surface:      #171B15;
-      --text:         #CDCCC8;
+      --surface:      #181C16;
+      --text:         #D0CEC9;
       --text-muted:   #7A7974;
       --text-faint:   #4A4946;
       --primary:      #4E9C70;
       --border:       #252A22;
       --divider:      #1E221C;
-
-      --hero-bg:      #090C08;
       --hero-text:    #F0EDE6;
-      --hero-muted:   rgba(240,237,230,0.42);
-      --hero-border:  rgba(240,237,230,0.10);
-      --hero-surface: rgba(240,237,230,0.03);
+      --hero-muted:   rgba(240,237,230,0.50);
+      --hero-border:  rgba(240,237,230,0.14);
+      --hero-surface: rgba(240,237,230,0.04);
     }
 
     /* ============================================================
@@ -90,7 +89,7 @@
     body {
       font-family: var(--font-body);
       font-size: var(--text-base);
-      font-weight: 300;
+      font-weight: 400;
       color: var(--text);
       background: var(--bg);
       line-height: 1.65;
@@ -98,11 +97,10 @@
     }
 
     img, svg { display: block; max-width: 100%; }
-    h1, h2, h3, h4 { text-wrap: balance; line-height: 1.1; }
+    h1, h2, h3, h4 { text-wrap: balance; line-height: 1.15; }
     p { text-wrap: pretty; }
     button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
     a { color: inherit; text-decoration: none; }
-
     :focus-visible { outline: 1px solid var(--primary); outline-offset: 3px; }
 
     .sr-only {
@@ -124,10 +122,7 @@
        HASH-ROUTED PAGES
     ============================================================ */
     .page { display: none; }
-    .page.active {
-      display: block;
-      animation: fadeIn 0.2s ease forwards;
-    }
+    .page.active { display: block; animation: fadeIn 0.2s ease forwards; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     /* ============================================================
@@ -141,7 +136,6 @@
       transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
     }
 
-    /* Solid nav: applied on non-home pages and on scroll within home */
     .nav--solid {
       background: color-mix(in srgb, var(--bg) 94%, transparent);
       backdrop-filter: blur(20px);
@@ -157,14 +151,9 @@
       gap: var(--space-8);
     }
 
-    /* Logo */
     .nav__logo {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      color: var(--hero-text);
-      flex-shrink: 0;
-      transition: opacity var(--transition);
+      display: flex; align-items: center; gap: var(--space-3);
+      color: var(--hero-text); flex-shrink: 0; transition: opacity var(--transition);
     }
     .nav__logo:hover { opacity: 0.6; }
     .nav--solid .nav__logo { color: var(--text); }
@@ -173,62 +162,47 @@
       font-family: var(--font-display);
       font-size: 1.05rem;
       font-weight: 400;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
-    /* Desktop links */
     .nav__links {
-      display: flex;
-      align-items: center;
+      display: flex; align-items: center;
       gap: clamp(var(--space-6), 3vw, var(--space-10));
       list-style: none;
     }
 
     .nav__links a {
-      font-size: var(--text-xs);
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-size: var(--text-xs); font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--hero-muted);
-      position: relative;
-      padding-bottom: 3px;
+      position: relative; padding-bottom: 3px;
       transition: color var(--transition);
     }
     .nav__links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 1px;
-      background: currentColor;
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 1px; background: currentColor;
       transition: width var(--transition);
     }
     .nav__links a:hover { color: var(--hero-text); }
     .nav__links a.active { color: var(--hero-text); }
     .nav__links a.active::after { width: 100%; }
-
     .nav--solid .nav__links a { color: var(--text-muted); }
     .nav--solid .nav__links a:hover { color: var(--text); }
     .nav--solid .nav__links a.active { color: var(--primary); }
 
-    /* Dark mode toggle */
     .nav__toggle {
-      width: 34px; height: 34px;
-      border-radius: 50%;
+      width: 34px; height: 34px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      color: var(--hero-muted);
-      flex-shrink: 0;
+      color: var(--hero-muted); flex-shrink: 0;
       transition: color var(--transition), background var(--transition);
     }
     .nav__toggle:hover { color: var(--hero-text); background: var(--hero-surface); }
     .nav--solid .nav__toggle { color: var(--text-muted); }
-    .nav--solid .nav__toggle:hover { color: var(--text); background: rgba(0,0,0,0.04); }
+    .nav--solid .nav__toggle:hover { color: var(--text); background: rgba(0,0,0,0.05); }
 
-    /* Mobile hamburger */
     .nav__burger {
-      display: none;
-      color: var(--hero-muted);
-      padding: var(--space-2);
+      display: none; color: var(--hero-muted); padding: var(--space-2);
       transition: color var(--transition);
     }
     .nav--solid .nav__burger { color: var(--text-muted); }
@@ -242,40 +216,30 @@
        MOBILE MENU
     ============================================================ */
     .mobile-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 99;
-      background: var(--bg);
-      flex-direction: column;
-      justify-content: center;
+      display: none; position: fixed; inset: 0; z-index: 99;
+      background: var(--bg); flex-direction: column; justify-content: center;
       padding: var(--space-16) clamp(var(--space-6), 5vw, var(--space-16));
     }
     .mobile-menu.open { display: flex; }
 
     .mobile-menu__close {
-      position: absolute;
-      top: var(--space-6);
+      position: absolute; top: var(--space-6);
       right: clamp(var(--space-6), 5vw, var(--space-16));
-      color: var(--text-muted);
-      padding: var(--space-2);
+      color: var(--text-muted); padding: var(--space-2);
     }
 
     .mobile-menu__links { list-style: none; width: 100%; }
     .mobile-menu__links li { border-bottom: 1px solid var(--divider); }
     .mobile-menu__links a {
-      display: block;
-      font-family: var(--font-display);
-      font-size: var(--text-xl);
-      font-weight: 300;
-      color: var(--text);
-      padding: var(--space-5) 0;
+      display: block; font-family: var(--font-display);
+      font-size: var(--text-xl); font-weight: 400;
+      color: var(--text); padding: var(--space-5) 0;
       transition: color var(--transition), padding-left var(--transition);
     }
     .mobile-menu__links a:hover { color: var(--primary); padding-left: var(--space-3); }
 
     /* ============================================================
-       HERO
+       HERO (with background image)
     ============================================================ */
     .hero {
       position: relative;
@@ -283,88 +247,51 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--hero-bg);
+      background-color: #0D1210;
+      background-image: url('./hero.jpg');
+      background-size: cover;
+      background-position: center center;
       overflow: hidden;
     }
 
-    .hero__grid {
-      position: absolute; inset: 0; z-index: 1;
-      background-image:
-        linear-gradient(rgba(240,237,230,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(240,237,230,0.025) 1px, transparent 1px);
-      background-size: 72px 72px;
-    }
-
-    .hero__glow {
-      position: absolute; z-index: 1;
-      width: 700px; height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(28,61,46,0.28) 0%, transparent 70%);
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
+    /* Dark gradient overlay for text legibility */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.52), rgba(0,0,0,0.68));
+      z-index: 1;
     }
 
     .hero__content {
       position: relative; z-index: 2;
       text-align: center;
-      max-width: 820px;
+      max-width: 800px;
       padding: 0 clamp(var(--space-6), 5vw, var(--space-16));
     }
 
     .hero__eyebrow {
-      font-size: var(--text-xs);
-      font-weight: 400;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
+      font-family: var(--font-body);
+      font-size: var(--text-xs); font-weight: 500;
+      letter-spacing: 0.22em; text-transform: uppercase;
       color: var(--hero-muted);
-      margin-bottom: var(--space-10);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-5);
+      margin-bottom: var(--space-8);
+      display: flex; align-items: center; justify-content: center; gap: var(--space-5);
     }
     .hero__eyebrow::before, .hero__eyebrow::after {
       content: ''; display: block;
-      width: 36px; height: 1px;
-      background: currentColor; opacity: 0.5;
+      width: 32px; height: 1px; background: currentColor; opacity: 0.6;
     }
 
     .hero__headline {
       font-family: var(--font-display);
       font-size: var(--text-3xl);
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
       color: var(--hero-text);
       letter-spacing: -0.01em;
-      line-height: 1.05;
-      margin-bottom: var(--space-8);
+      line-height: 1.1;
     }
-
-    .hero__subline {
-      font-size: var(--text-sm);
-      font-weight: 300;
-      color: var(--hero-muted);
-      max-width: 420px;
-      margin: 0 auto var(--space-12);
-      line-height: 1.75;
-    }
-
-    .hero__cta {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-3);
-      font-size: var(--text-xs);
-      font-weight: 400;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--hero-text);
-      border: 1px solid var(--hero-border);
-      padding: var(--space-4) var(--space-8);
-      transition: border-color var(--transition), background var(--transition);
-    }
-    .hero__cta:hover { border-color: rgba(240,237,230,0.32); background: var(--hero-surface); }
-    .hero__cta svg { transition: transform var(--transition); }
-    .hero__cta:hover svg { transform: translateX(4px); }
 
     /* ============================================================
        SHARED UTILITIES
@@ -375,34 +302,60 @@
     }
 
     .label {
-      display: block;
-      font-size: var(--text-xs);
-      font-weight: 400;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
+      display: block; font-size: var(--text-xs); font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted);
     }
     .label--green { color: var(--primary); }
 
     .text-link {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      font-size: var(--text-xs);
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--primary);
-      border-bottom: 1px solid currentColor;
-      padding-bottom: 2px;
-      transition: opacity var(--transition);
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      font-size: var(--text-xs); font-weight: 500;
+      letter-spacing: 0.10em; text-transform: uppercase;
+      color: var(--primary); border-bottom: 1px solid currentColor;
+      padding-bottom: 2px; transition: opacity var(--transition);
     }
     .text-link:hover { opacity: 0.6; }
     .text-link svg { transition: transform var(--transition); }
     .text-link:hover svg { transform: translateX(3px); }
 
     /* ============================================================
-       PAGE HEADER (About / Portfolio / News / Contact)
+       LIT BADGE
+    ============================================================ */
+    .lit-wrap { position: relative; display: inline-block; }
+
+    .lit-badge {
+      position: absolute;
+      top: -7px; right: -7px;
+      background: var(--primary);
+      color: #F0EDE6;
+      font-family: var(--font-body);
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 2px 5px;
+      border-radius: 2px;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    [data-theme="dark"] .lit-badge { background: var(--primary); color: #111510; }
+
+    /* Portfolio card LIT badge (absolute within pf-card) */
+    .pf-lit-badge {
+      position: absolute;
+      top: var(--space-4); right: var(--space-4);
+      background: var(--primary);
+      color: #F0EDE6;
+      font-family: var(--font-body);
+      font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 3px 7px; border-radius: 2px; line-height: 1;
+    }
+    [data-theme="dark"] .pf-lit-badge { background: var(--primary); color: #111510; }
+
+    /* ============================================================
+       PAGE HEADER
     ============================================================ */
     .page-header {
       padding: clamp(var(--space-24), 10vw, var(--space-32)) 0 clamp(var(--space-10), 4vw, var(--space-16));
@@ -413,18 +366,14 @@
 
     .page-header__title {
       font-family: var(--font-display);
-      font-size: var(--text-2xl);
-      font-weight: 300;
+      font-size: var(--text-2xl); font-weight: 400;
       color: var(--text);
     }
 
     .page-header__desc {
       margin-top: var(--space-5);
-      font-size: var(--text-base);
-      font-weight: 300;
-      color: var(--text-muted);
-      max-width: 58ch;
-      line-height: 1.75;
+      font-size: var(--text-base); font-weight: 400;
+      color: var(--text-muted); max-width: 58ch; line-height: 1.7;
     }
 
     /* ============================================================
@@ -443,13 +392,9 @@
     }
 
     .intro-strip__body p {
-      font-size: var(--text-base);
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.78;
-      max-width: 60ch;
+      font-size: var(--text-base); font-weight: 400;
+      color: var(--text-muted); line-height: 1.75; max-width: 60ch;
     }
-
     .intro-strip__body .text-link { margin-top: var(--space-6); }
 
     @media (max-width: 640px) {
@@ -465,49 +410,32 @@
     }
 
     .preview-section__header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: var(--space-6);
-      margin-bottom: clamp(var(--space-10), 4vw, var(--space-14));
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: var(--space-6); margin-bottom: clamp(var(--space-10), 4vw, var(--space-14));
     }
 
     .sector-block { margin-bottom: var(--space-8); }
     .sector-block:last-child { margin-bottom: 0; }
 
     .sector-label {
-      font-size: var(--text-xs);
-      font-weight: 400;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      padding-bottom: var(--space-3);
-      border-bottom: 1px solid var(--divider);
-      margin-bottom: var(--space-3);
+      font-size: var(--text-xs); font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--text-faint); padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--divider); margin-bottom: var(--space-3);
     }
 
-    .logo-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2);
-    }
+    .logo-row { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 
     .logo-chip {
       flex: 0 0 auto;
       border: 1px solid var(--border);
       padding: var(--space-3) var(--space-5);
       font-family: var(--font-display);
-      font-size: var(--text-sm);
-      font-weight: 400;
-      color: var(--text-muted);
-      letter-spacing: 0.03em;
+      font-size: var(--text-sm); font-weight: 400;
+      color: var(--text-muted); letter-spacing: 0.02em;
       transition: background var(--transition), border-color var(--transition), color var(--transition);
     }
-    .logo-chip:hover {
-      background: var(--surface);
-      border-color: var(--text-faint);
-      color: var(--text);
-    }
+    .logo-chip:hover { background: var(--surface); border-color: var(--text-faint); color: var(--text); }
 
     /* ============================================================
        HOME — NEWS PREVIEW
@@ -518,38 +446,28 @@
     }
 
     .news-preview__header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: var(--space-6);
-      margin-bottom: clamp(var(--space-8), 3vw, var(--space-12));
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: var(--space-6); margin-bottom: clamp(var(--space-8), 3vw, var(--space-12));
     }
 
     .news-row { list-style: none; }
 
     .news-row__item {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: var(--space-6);
-      padding: var(--space-5) 0;
-      border-bottom: 1px solid var(--divider);
-      align-items: baseline;
+      display: grid; grid-template-columns: 150px 1fr;
+      gap: var(--space-6); padding: var(--space-5) 0;
+      border-bottom: 1px solid var(--divider); align-items: baseline;
     }
     .news-row__item:first-child { border-top: 1px solid var(--divider); }
 
     .news-row__date {
-      font-size: var(--text-xs);
-      letter-spacing: 0.08em;
-      color: var(--text-faint);
-      white-space: nowrap;
+      font-size: var(--text-xs); font-weight: 400;
+      letter-spacing: 0.06em; color: var(--text-faint); white-space: nowrap;
     }
 
     .news-row__headline {
       font-family: var(--font-display);
-      font-size: var(--text-base);
-      font-weight: 400;
-      color: var(--text);
-      line-height: 1.4;
+      font-size: var(--text-base); font-weight: 400;
+      color: var(--text); line-height: 1.4;
     }
 
     @media (max-width: 480px) {
@@ -557,7 +475,7 @@
     }
 
     /* ============================================================
-       ABOUT — PROSE SECTIONS
+       ABOUT — PROSE BLOCKS
     ============================================================ */
     .prose-block {
       padding: clamp(var(--space-16), 6vw, var(--space-24)) 0;
@@ -565,60 +483,97 @@
     }
 
     .prose-block__grid {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: clamp(var(--space-10), 6vw, var(--space-24));
-      align-items: start;
+      display: grid; grid-template-columns: 200px 1fr;
+      gap: clamp(var(--space-10), 6vw, var(--space-24)); align-items: start;
     }
 
     .prose-block__heading {
       font-family: var(--font-display);
-      font-size: var(--text-lg);
-      font-weight: 400;
-      color: var(--text);
-      line-height: 1.2;
+      font-size: var(--text-lg); font-weight: 400;
+      color: var(--text); line-height: 1.2;
     }
 
     .prose-block__body { max-width: 68ch; }
 
     .prose-block__body p {
-      font-size: var(--text-base);
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.78;
-      margin-bottom: var(--space-6);
+      font-size: var(--text-base); font-weight: 400;
+      color: var(--text-muted); line-height: 1.78; margin-bottom: var(--space-6);
     }
     .prose-block__body p:last-child { margin-bottom: 0; }
-
-    /* Philosophy items within prose */
-    .phil-item {
-      padding-bottom: var(--space-8);
-      margin-bottom: var(--space-8);
-      border-bottom: 1px solid var(--divider);
-    }
-    .phil-item:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: none; }
-
-    .phil-item__title {
-      font-family: var(--font-display);
-      font-size: var(--text-lg);
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: var(--space-3);
-    }
-
-    .phil-item__body {
-      font-size: var(--text-base);
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.78;
-    }
 
     @media (max-width: 680px) {
       .prose-block__grid { grid-template-columns: 1fr; gap: var(--space-5); }
     }
 
     /* ============================================================
-       PORTFOLIO — COMPANY CARDS
+       ABOUT — TEAM GRID
+    ============================================================ */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8) var(--space-6);
+    }
+
+    .team-card { }
+
+    .team-card__photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      margin-bottom: var(--space-4);
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .team-card__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(100%);
+      transition: filter 0.4s ease, transform 0.4s ease;
+    }
+    .team-card:hover .team-card__photo img {
+      filter: grayscale(50%);
+      transform: scale(1.03);
+    }
+
+    .team-card__name {
+      font-family: var(--font-display);
+      font-size: var(--text-base); font-weight: 400;
+      color: var(--text); margin-bottom: var(--space-1);
+    }
+
+    .team-card__title {
+      font-size: var(--text-xs); font-weight: 400;
+      color: var(--text-faint); letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 760px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 420px) { .team-grid { grid-template-columns: 1fr; } }
+
+    /* ============================================================
+       ABOUT — OCEAN VINES PHOTO GALLERY
+    ============================================================ */
+    .ov-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+    }
+
+    .ov-gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 2px;
+      filter: grayscale(15%);
+      transition: filter 0.3s ease;
+    }
+    .ov-gallery img:hover { filter: grayscale(0%); }
+
+    /* ============================================================
+       PORTFOLIO — CARDS
     ============================================================ */
     .pf-sector {
       padding: clamp(var(--space-12), 5vw, var(--space-20)) 0;
@@ -627,25 +582,18 @@
     .pf-sector:last-of-type { border-bottom: none; }
 
     .pf-sector__header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: var(--space-6);
-      margin-bottom: var(--space-10);
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: var(--space-6); margin-bottom: var(--space-10);
     }
 
     .pf-sector__name {
       font-family: var(--font-display);
-      font-size: var(--text-xl);
-      font-weight: 300;
-      color: var(--text);
+      font-size: var(--text-xl); font-weight: 400; color: var(--text);
     }
 
     .pf-sector__num {
       font-family: var(--font-display);
-      font-size: var(--text-lg);
-      font-weight: 300;
-      color: var(--text-faint);
+      font-size: var(--text-lg); font-weight: 400; color: var(--text-faint);
     }
 
     .pf-grid {
@@ -655,6 +603,7 @@
     }
 
     .pf-card {
+      position: relative;
       background: var(--bg);
       border: 1px solid var(--border);
       padding: clamp(var(--space-6), 2.5vw, var(--space-10));
@@ -673,26 +622,19 @@
 
     .pf-card__mono span {
       font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
+      font-size: 1.1rem; font-weight: 400;
+      color: var(--text-muted); letter-spacing: 0.04em;
     }
 
     .pf-card__name {
       font-family: var(--font-display);
-      font-size: var(--text-lg);
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: var(--space-2);
-      line-height: 1.2;
+      font-size: var(--text-lg); font-weight: 400;
+      color: var(--text); margin-bottom: var(--space-2); line-height: 1.2;
     }
 
     .pf-card__desc {
-      font-size: var(--text-sm);
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.65;
+      font-size: var(--text-sm); font-weight: 400;
+      color: var(--text-muted); line-height: 1.65;
     }
 
     @media (max-width: 760px) { .pf-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -710,31 +652,22 @@
     .news-card:first-child { border-top: 1px solid var(--divider); }
 
     .news-card__date {
-      font-size: var(--text-xs);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      margin-bottom: var(--space-3);
+      font-size: var(--text-xs); font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-faint); margin-bottom: var(--space-3);
     }
 
     .news-card__headline {
       font-family: var(--font-display);
-      font-size: var(--text-xl);
-      font-weight: 300;
-      color: var(--text);
-      margin-bottom: var(--space-3);
-      line-height: 1.2;
+      font-size: var(--text-xl); font-weight: 400;
+      color: var(--text); margin-bottom: var(--space-3); line-height: 1.2;
     }
-
     .news-card__headline a { transition: color var(--transition); }
     .news-card__headline a:hover { color: var(--primary); }
 
     .news-card__summary {
-      font-size: var(--text-base);
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.7;
-      max-width: 65ch;
+      font-size: var(--text-base); font-weight: 400;
+      color: var(--text-muted); line-height: 1.7; max-width: 65ch;
     }
 
     /* ============================================================
@@ -746,38 +679,25 @@
     }
 
     .contact-intro {
-      font-size: var(--text-base);
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.75;
-      margin-bottom: var(--space-6);
+      font-size: var(--text-base); font-weight: 400;
+      color: var(--text-muted); line-height: 1.75; margin-bottom: var(--space-6);
     }
 
     .contact-email {
-      display: block;
-      font-family: var(--font-display);
-      font-size: var(--text-xl);
-      font-weight: 300;
-      color: var(--primary);
-      margin-bottom: var(--space-6);
-      transition: opacity var(--transition);
+      display: block; font-family: var(--font-display);
+      font-size: var(--text-xl); font-weight: 400; color: var(--primary);
+      margin-bottom: var(--space-6); transition: opacity var(--transition);
     }
     .contact-email:hover { opacity: 0.65; }
 
     .contact-location {
-      font-size: var(--text-sm);
-      font-weight: 300;
-      color: var(--text-muted);
-      margin-bottom: var(--space-8);
-      letter-spacing: 0.04em;
+      font-size: var(--text-sm); font-weight: 400;
+      color: var(--text-muted); margin-bottom: var(--space-8);
     }
 
     .contact-note {
-      font-size: var(--text-sm);
-      font-weight: 300;
-      color: var(--text-faint);
-      line-height: 1.7;
-      max-width: 50ch;
+      font-size: var(--text-sm); font-weight: 400;
+      color: var(--text-faint); line-height: 1.7; max-width: 50ch;
     }
 
     /* ============================================================
@@ -789,40 +709,25 @@
     }
 
     .footer__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-5);
-      flex-wrap: wrap;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: var(--space-5); flex-wrap: wrap;
     }
 
     .footer__brand {
       font-family: var(--font-display);
-      font-size: 0.875rem;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
+      font-size: 0.9rem; font-weight: 400;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted);
     }
 
     .footer__copy {
-      font-size: var(--text-xs);
-      color: var(--text-faint);
+      font-size: var(--text-xs); font-weight: 400; color: var(--text-faint);
     }
 
-    .footer__links {
-      display: flex;
-      gap: var(--space-6);
-      list-style: none;
-      flex-wrap: wrap;
-    }
-
+    .footer__links { display: flex; gap: var(--space-6); list-style: none; flex-wrap: wrap; }
     .footer__links a {
-      font-size: var(--text-xs);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      transition: color var(--transition);
+      font-size: var(--text-xs); font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-faint); transition: color var(--transition);
     }
     .footer__links a:hover { color: var(--text-muted); }
 
@@ -840,7 +745,6 @@
   <header class="nav" id="nav" role="banner">
     <div class="container">
       <nav class="nav__inner" aria-label="Main navigation">
-
         <a href="#home" class="nav__logo" aria-label="TGG Group — Home">
           <svg width="26" height="20" viewBox="0 0 26 20" fill="none" aria-hidden="true">
             <rect x="0" y="0"    width="26" height="1.8" fill="currentColor"/>
@@ -863,14 +767,13 @@
           </svg>
         </button>
 
-        <button class="nav__burger" id="burger-btn" aria-label="Open menu" aria-expanded="false">
+        <button class="nav__burger" id="burger-btn" aria-label="Open menu">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <line x1="3" y1="6"  x2="21" y2="6"/>
             <line x1="3" y1="12" x2="21" y2="12"/>
             <line x1="3" y1="18" x2="21" y2="18"/>
           </svg>
         </button>
-
       </nav>
     </div>
   </header>
@@ -901,30 +804,21 @@
     ============================================================ -->
     <section class="page" id="page-home" aria-label="Home">
 
-      <!-- Hero -->
+      <!-- Hero: atmospheric HK harbour image, no subtitle, no CTA -->
       <div class="hero">
-        <div class="hero__grid"  aria-hidden="true"></div>
-        <div class="hero__glow"  aria-hidden="true"></div>
         <div class="hero__content">
-          <p class="hero__eyebrow">Private Family Office · Hong Kong</p>
+          <p class="hero__eyebrow">Private Investment Group · Asia</p>
           <h1 class="hero__headline">Building for<br>The Greatest Good.</h1>
-          <p class="hero__subline">A single family office investing with conviction across lifestyle, sports, media, and alternative strategies.</p>
-          <a href="#about" class="hero__cta">
-            About us
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
         </div>
       </div>
 
-      <!-- Who We Are (brief intro) -->
+      <!-- Who We Are -->
       <div class="intro-strip">
         <div class="container">
           <div class="intro-strip__grid">
             <span class="label label--green">Who We Are</span>
             <div class="intro-strip__body">
-              <p>TGG Group is a single family office headquartered in Hong Kong. We combine institutional rigour with entrepreneurial agility — identifying exceptional opportunities, building enduring businesses, and creating value that extends beyond financial return.</p>
+              <p>TGG is an Asia-based private investment group investing with conviction across lifestyle, sports, media, and alternative strategies. We actively seek to nurture and enhance the value of our strategic holdings under the brand of "Lit".</p>
               <a href="#about" class="text-link">
                 Learn more
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -936,7 +830,7 @@
         </div>
       </div>
 
-      <!-- Portfolio Preview -->
+      <!-- Portfolio Preview with LIT badges -->
       <div class="preview-section">
         <div class="container">
           <div class="preview-section__header">
@@ -955,7 +849,10 @@
               <div class="logo-chip">Aap Ba Din</div>
               <div class="logo-chip">Tempura Taki</div>
               <div class="logo-chip">Verde Vines</div>
-              <div class="logo-chip">Lit by Larry</div>
+              <div class="lit-wrap">
+                <div class="logo-chip">Lit by Larry</div>
+                <span class="lit-badge">LIT</span>
+              </div>
               <div class="logo-chip">Casa Dao</div>
             </div>
           </div>
@@ -963,7 +860,10 @@
           <div class="sector-block">
             <div class="sector-label">Sports</div>
             <div class="logo-row">
-              <div class="logo-chip">LIT Sports Global</div>
+              <div class="lit-wrap">
+                <div class="logo-chip">LIT Sports Global</div>
+                <span class="lit-badge">LIT</span>
+              </div>
               <div class="logo-chip">TLP Pickleball Club</div>
             </div>
           </div>
@@ -971,7 +871,10 @@
           <div class="sector-block">
             <div class="sector-label">Media &amp; Technology</div>
             <div class="logo-row">
-              <div class="logo-chip">LIT Media Group</div>
+              <div class="lit-wrap">
+                <div class="logo-chip">LIT Media Group</div>
+                <span class="lit-badge">LIT</span>
+              </div>
             </div>
           </div>
 
@@ -984,7 +887,7 @@
         </div>
       </div>
 
-      <!-- News Preview (rendered from NEWS_DATA) -->
+      <!-- News Preview -->
       <div class="news-preview">
         <div class="container">
           <div class="news-preview__header">
@@ -1036,34 +939,118 @@
           <div class="prose-block__grid">
             <h2 class="prose-block__heading">Background</h2>
             <div class="prose-block__body">
-              <p>TGG Group is a single family office headquartered in Hong Kong, guided by the vision of celebrating The Greatest Good for all. Built on an institutional foundation, we remain humble and nimble as entrepreneurs — committed to generating lasting value in everything we do.</p>
-              <p>Our core team previously managed significant pools of capital across Sovereign Wealth Funds, Pension Funds, Insurance Companies, and other global Family Offices. That experience navigating the complexities of international markets informs every decision we make today.</p>
-              <p>We actively seek to nurture and enhance the value of our strategic holdings. Our approach combines institutional rigour with the agility and conviction of a private family — moving deliberately, building enduringly, and maintaining a long-term view that transcends market cycles.</p>
+              <p>TGG Group is a single family office headquartered in Hong Kong, guided by the vision of celebrating The Greatest Good for all. Guided by our overall vision, we have purposefully assembled a small but mighty team on a mission — TGG Ventures is the financial arm of the Group.</p>
+              <p>Our core team previously managed significant pools of capital across Sovereign Wealth Funds, Pension Funds, Insurance Companies, and other global Family Offices. Our journey has been defined by successfully navigating the complexities of global markets across diverse asset classes.</p>
+              <p>We actively seek to nurture and enhance the value of our strategic holdings under the brand of "Lit". With an institutional foundation, we remain humble and nimble as entrepreneurs to generate value in all we do.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Investment Philosophy (prose, NOT a card grid) -->
+      <!-- Management Team -->
       <div class="prose-block">
         <div class="container">
           <div class="prose-block__grid">
-            <h2 class="prose-block__heading">Our Philosophy</h2>
-            <div class="prose-block__body">
+            <h2 class="prose-block__heading">Our Team</h2>
+            <div class="team-grid">
 
-              <div class="phil-item">
-                <div class="phil-item__title">Long-Horizon Capital</div>
-                <p class="phil-item__body">We invest with a generational mindset — patient, unhurried, and committed to outcomes that compound over time rather than follow quarterly cycles. The businesses we build and back are chosen because we believe in them over a decade, not a quarter.</p>
+              <!-- Barry -->
+              <div class="team-card">
+                <div class="team-card__photo">
+                  <img src="https://static.wixstatic.com/media/b24b09_d1a3701580fd401e8be0ca4e8beb058f~mv2.png"
+                       alt="Barry" loading="lazy">
+                  <!-- Replace with actual headshot: Barry -->
+                </div>
+                <div class="team-card__name">Barry</div>
+                <div class="team-card__title">Principal</div>
               </div>
 
-              <div class="phil-item">
-                <div class="phil-item__title">Selective Conviction</div>
-                <p class="phil-item__body">Each holding is chosen with rigour. We back our positions with full commitment — capital, relationships, and leadership — rather than diversifying away our conviction. We are concentrated by design, because we believe deeply in what we own.</p>
+              <!-- Eric -->
+              <div class="team-card">
+                <div class="team-card__photo">
+                  <img src="https://static.wixstatic.com/media/b24b09_cddb2fd484f64d31b1ede8321143e011~mv2.png"
+                       alt="Eric" loading="lazy">
+                  <!-- Replace with actual headshot: Eric -->
+                </div>
+                <div class="team-card__name">Eric</div>
+                <div class="team-card__title">Principal</div>
               </div>
 
-              <div class="phil-item">
-                <div class="phil-item__title">Integrity as Strategy</div>
-                <p class="phil-item__body">At TGG, we believe the highest truth creates the greatest value. By combining rigorous strategy with unwavering integrity, we identify individuals and organisations where doing right and doing well are not in conflict — they are one and the same path.</p>
+              <!-- Andre -->
+              <div class="team-card">
+                <div class="team-card__photo">
+                  <img src="https://static.wixstatic.com/media/b24b09_ba566758ce37491e9fccf0637bdddc83~mv2.png"
+                       alt="Andre" loading="lazy">
+                  <!-- Replace with actual headshot: Andre -->
+                </div>
+                <div class="team-card__name">Andre</div>
+                <div class="team-card__title">Principal</div>
+              </div>
+
+              <!-- Jo -->
+              <div class="team-card">
+                <div class="team-card__photo">
+                  <img src="https://static.wixstatic.com/media/b24b09_b17c0d9a683a45d2b594e05a68051310~mv2.png"
+                       alt="Jo" loading="lazy">
+                  <!-- Replace with actual headshot: Jo -->
+                </div>
+                <div class="team-card__name">Jo</div>
+                <div class="team-card__title">Team Member</div>
+              </div>
+
+              <!-- Anthony -->
+              <div class="team-card">
+                <div class="team-card__photo">
+                  <img src="https://static.wixstatic.com/media/b24b09_f6a465550d49434b99337681eb1a55cc~mv2.png"
+                       alt="Anthony" loading="lazy">
+                  <!-- Replace with actual headshot: Anthony -->
+                </div>
+                <div class="team-card__name">Anthony</div>
+                <div class="team-card__title">Team Member</div>
+              </div>
+
+              <!-- CK -->
+              <div class="team-card">
+                <div class="team-card__photo">
+                  <img src="https://static.wixstatic.com/media/b24b09_13a0dd1231dd4ca39ebff4b2ccb6bd50~mv2.png"
+                       alt="CK" loading="lazy">
+                  <!-- Replace with actual headshot: CK -->
+                </div>
+                <div class="team-card__name">CK</div>
+                <div class="team-card__title">Team Member</div>
+              </div>
+
+              <!-- Zoe -->
+              <div class="team-card">
+                <div class="team-card__photo">
+                  <img src="https://static.wixstatic.com/media/b24b09_c9f24e56f5d34757beb3f48050cf721a~mv2.png"
+                       alt="Zoe" loading="lazy">
+                  <!-- Replace with actual headshot: Zoe -->
+                </div>
+                <div class="team-card__name">Zoe</div>
+                <div class="team-card__title">Team Member</div>
+              </div>
+
+              <!-- Chris -->
+              <div class="team-card">
+                <div class="team-card__photo">
+                  <img src="https://static.wixstatic.com/media/b24b09_f786182308d94511a02978349bc13af3~mv2.png"
+                       alt="Chris" loading="lazy">
+                  <!-- Replace with actual headshot: Chris -->
+                </div>
+                <div class="team-card__name">Chris</div>
+                <div class="team-card__title">Team Member</div>
+              </div>
+
+              <!-- Angela -->
+              <div class="team-card">
+                <div class="team-card__photo">
+                  <img src="https://static.wixstatic.com/media/b24b09_fa1298124a7c48fe8d045df98c79f7f9~mv2.jpg"
+                       alt="Angela" loading="lazy">
+                  <!-- Replace with actual headshot: Angela -->
+                </div>
+                <div class="team-card__name">Angela</div>
+                <div class="team-card__title">Team Member</div>
               </div>
 
             </div>
@@ -1071,7 +1058,7 @@
         </div>
       </div>
 
-      <!-- Stewardship / Giving Back -->
+      <!-- Stewardship / Giving Back (Philosophy section REMOVED per spec) -->
       <div class="prose-block" style="border-bottom: none;">
         <div class="container">
           <div class="prose-block__grid">
@@ -1079,6 +1066,19 @@
             <div class="prose-block__body">
               <p>As stewards of the resources we have been granted, we believe it is our responsibility to ensure they are wisely allocated for the most impactful returns — financial and otherwise. TGG actively supports NGOs and charitable causes aligned with this commitment.</p>
               <p>Our primary philanthropic partner is <strong>Ocean Vines</strong>, an NGO dedicated to ocean advocacy and education. We support ocean cleanup initiatives, environmental education programmes, and conservation events across Hong Kong and the Asia-Pacific region. Because of our ocean's importance to our planet and to future generations, we consider this work a core part of building for The Greatest Good.</p>
+
+              <!-- Ocean Vines Photo Gallery -->
+              <div class="ov-gallery" role="list" aria-label="Ocean Vines photos">
+                <!-- Replace with actual Ocean Vines photos from tgg.holdings/givingback -->
+                <img src="https://static.wixstatic.com/media/b24b09_54d9305e673246d196e7cd75c95f9e85~mv2.jpg"
+                     alt="Ocean Vines charity gala" loading="lazy">
+                <!-- Replace with actual Ocean Vines photo URL -->
+                <img src="https://static.wixstatic.com/media/b24b09_05dabdabefa548fe8f94a85093de9fad~mv2.jpeg"
+                     alt="Ocean cleanup event" loading="lazy">
+                <!-- Replace with actual Ocean Vines photo URL -->
+                <img src="https://static.wixstatic.com/media/b24b09_ee487953cd4a434bab6c7d7aa242568e~mv2.jpg"
+                     alt="Ocean Vines community event" loading="lazy">
+              </div>
             </div>
           </div>
         </div>
@@ -1126,31 +1126,33 @@
             <div class="pf-card">
               <div class="pf-card__mono"><span>A</span></div>
               <h3 class="pf-card__name">Aap Ba Din</h3>
-              <p class="pf-card__desc">Contemporary Cantonese cuisine blending tradition with innovative culinary technique. A personalized dining experience in Hong Kong.</p>
+              <p class="pf-card__desc">Blends traditional Cantonese cuisine with innovative techniques, offering personalised menus crafted for each occasion.</p>
             </div>
 
             <div class="pf-card">
               <div class="pf-card__mono"><span>T</span></div>
               <h3 class="pf-card__name">Tempura Taki</h3>
-              <p class="pf-card__desc">Japanese tempura omakase featuring organic products and meticulous technique, set in an atmosphere of relaxed refinement.</p>
+              <p class="pf-card__desc">A tempura omakase concept featuring Japanese flavours, organic products, and detailed cooking skills in a relaxed setting.</p>
             </div>
 
             <div class="pf-card">
               <div class="pf-card__mono"><span>V</span></div>
               <h3 class="pf-card__name">Verde Vines</h3>
-              <p class="pf-card__desc">Curating the world's finest beverages for the Hong Kong market — quality and provenance above all, for everyday celebrations.</p>
+              <p class="pf-card__desc">A curated collection of exquisite beverages, focused on uniqueness and quality, often investing directly in the Chateau or domain.</p>
             </div>
 
+            <!-- LIT badge: Lit by Larry -->
             <div class="pf-card">
+              <span class="pf-lit-badge">LIT</span>
               <div class="pf-card__mono"><span>L</span></div>
               <h3 class="pf-card__name">Lit by Larry</h3>
-              <p class="pf-card__desc">Jewelry art inspired by the legacy of Larry Jewelry, using lab-grown gemstones and unmatched creative freedom to redefine fine jewelry.</p>
+              <p class="pf-card__desc">Where tradition and generations of craftsmanship meet innovation, creating unique visions of jewellery art with creative freedom.</p>
             </div>
 
             <div class="pf-card">
               <div class="pf-card__mono"><span>C</span></div>
               <h3 class="pf-card__name">Casa Dao</h3>
-              <p class="pf-card__desc">A bespoke events venue and private dining destination in Hong Kong, hosting cultural and philanthropic gatherings.</p>
+              <p class="pf-card__desc">A bespoke events venue destination in Hong Kong, hosting cultural and philanthropic gatherings.</p>
             </div>
 
           </div>
@@ -1166,16 +1168,18 @@
           </div>
           <div class="pf-grid">
 
+            <!-- LIT badge: LIT Sports Global -->
             <div class="pf-card">
+              <span class="pf-lit-badge">LIT</span>
               <div class="pf-card__mono"><span>LS</span></div>
               <h3 class="pf-card__name">LIT Sports Global</h3>
-              <p class="pf-card__desc">Using sport as a platform to cultivate grit, community, and character — building a new chapter for sport in Hong Kong and across Asia.</p>
+              <p class="pf-card__desc">Using sport as a platform to enhance grit, perseverance, and teamwork, with a focus on pickleball and inclusive sporting culture.</p>
             </div>
 
             <div class="pf-card">
               <div class="pf-card__mono"><span>TL</span></div>
               <h3 class="pf-card__name">TLP Pickleball Club</h3>
-              <p class="pf-card__desc">The longest-running pickleball club in Hong Kong, home to the city's first professional pickleball players and the sport's growing community.</p>
+              <p class="pf-card__desc">The longest-running pickleball club in Hong Kong, now home to the city's first professional pickleball players.</p>
             </div>
 
           </div>
@@ -1191,10 +1195,12 @@
           </div>
           <div class="pf-grid">
 
+            <!-- LIT badge: LIT Media Group -->
             <div class="pf-card">
+              <span class="pf-lit-badge">LIT</span>
               <div class="pf-card__mono"><span>LM</span></div>
               <h3 class="pf-card__name">LIT Media Group</h3>
-              <p class="pf-card__desc">A creative studio and talent management firm dedicated to discovering artists and shaping the future of entertainment across Asia.</p>
+              <p class="pf-card__desc">A dynamic team of creative artists dedicated to discovering talent and shaping the future of entertainment across music, film, and global collaborations.</p>
             </div>
 
           </div>
@@ -1213,7 +1219,7 @@
             <div class="pf-card">
               <div class="pf-card__mono"><span>TA</span></div>
               <h3 class="pf-card__name">TGGA × Arena Investors</h3>
-              <p class="pf-card__desc">A strategic joint venture with Arena Investors LP, providing innovative financing solutions for complex special situations across Asia.</p>
+              <p class="pf-card__desc">A strategic joint venture with Arena Investors, offering innovative and flexible financing solutions for complex special situations across Asia.</p>
             </div>
 
           </div>
@@ -1291,7 +1297,7 @@
             <p class="contact-intro">For inquiries, please reach us at:</p>
             <a href="mailto:info@tgg-group.com" class="contact-email">info@tgg-group.com</a>
             <p class="contact-location">Hong Kong</p>
-            <p class="contact-note">TGG Group is a private family office. We respond to relevant inquiries on a discretionary basis.</p>
+            <p class="contact-note">TGG Group is a private investment group. We respond to relevant inquiries on a discretionary basis.</p>
           </div>
         </div>
       </div>
@@ -1318,25 +1324,59 @@
   <script>
     /* ============================================================
        NEWS DATA — Edit this array to add/remove news items.
-       To add a new item, copy one entry and change the values.
+       To add a new item, copy one entry and paste at the TOP.
        Most recent items must be at the TOP of the array.
     ============================================================ */
     const NEWS_DATA = [
       {
-        date: "2026-04-01",
-        headline: "TGG Group Announces Partnership with Arena Investors",
-        summary: "A new alternative investment vehicle focused on global opportunities and complex special situations across Asia.",
-        // link: "https://external-article-url.com"
+        date: "2025-11-26",
+        headline: "TVB Insights: The Rising Popularity of Pickleball in Hong Kong",
+        summary: "Pickleball is rapidly gaining momentum in Hong Kong, attracting enthusiasts from various age groups. TVB explores the sport's expansion and growing community.",
       },
       {
-        date: "2026-03-15",
-        headline: "Casa Dao Opens in Central",
-        summary: "The newest addition to TGG's lifestyle portfolio brings a bespoke dining and events experience to Hong Kong.",
+        date: "2025-11-23",
+        headline: "TGG Signs Hong Kong's First Professional Pickleball Players",
+        summary: "A landmark moment for Hong Kong sport — three elite athletes sign as the city's first professional pickleball players under LIT Sports Global.",
       },
       {
-        date: "2026-02-20",
-        headline: "Ocean Vines Conservation Initiative Launches",
-        summary: "Supporting marine conservation and ocean advocacy across the Asia-Pacific region through TGG's philanthropic programme.",
+        date: "2025-11-05",
+        headline: "Hong Kong Wins Silver at the 2025 Pickleball World Cup",
+        summary: "Hong Kong's national pickleball team brings home the silver medal from the 2025 World Cup in Florida, delivering a historic and fearless performance.",
+      },
+      {
+        date: "2025-11-02",
+        headline: "Pickleball Goes Aces: TGG's Vision as Hong Kong Heads to the World Cup",
+        summary: "TGG's strategic sports investment positions pickleball as an emerging asset class, with Hong Kong's national team competing on the global stage.",
+      },
+      {
+        date: "2025-10-27",
+        headline: "LIT Stars Shine Gold at World Pickleball Championships",
+        summary: "TGG's LIT Sports Global professional team captures multiple medals including gold in Malaysia, signalling sport as a new media asset class.",
+      },
+      {
+        date: "2025-10-17",
+        headline: "TGG's Sports Investment: The Business of Belonging",
+        summary: "LIT Sports Global deepens its presence in Asia, using sport as a platform for participation, community, and inclusive culture.",
+      },
+      {
+        date: "2025-10-04",
+        headline: "TGG: Turning Sports into a Strategic Power Play",
+        summary: "TGG launches LIT Sports Global as a vertically integrated sports platform, seizing the momentum of sport as a frontier asset class.",
+      },
+      {
+        date: "2025-08-19",
+        headline: "TGG Champions Hong Kong's Cultural Renaissance with Concert Receivable Financing",
+        summary: "TGG reflects on its role supporting LIT Culture and TVB's inaugural concerts through innovative receivable financing.",
+      },
+      {
+        date: "2025-08-02",
+        headline: "Lit Culture Presents Midlife, Sing & Shine! 3 Concert",
+        summary: "Lit Culture, a branch of TGG Group, presents a three-day musical celebration as part of its entertainment and cultural portfolio.",
+      },
+      {
+        date: "2025-06-11",
+        headline: "Judy Ongg's Triumphant Comeback to Hong Kong After 40 Years",
+        summary: "TGG subsidiaries Lit Artist, Lit by Larry, Verde Vines, and Ocean Vines collaborate to bring renowned Taiwanese artist Judy Ongg back to Hong Kong.",
       },
     ];
     /* ============================================================ */
@@ -1369,10 +1409,9 @@
     const navEl = document.getElementById('nav');
 
     function updateNavStyle() {
-      const hash    = window.location.hash || '#home';
-      const isHome  = (hash === '#home' || hash === '');
-      const scrolled = window.scrollY > 48;
-      navEl.classList.toggle('nav--solid', !isHome || scrolled);
+      const hash   = window.location.hash || '#home';
+      const isHome = (hash === '#home' || hash === '');
+      navEl.classList.toggle('nav--solid', !isHome || window.scrollY > 48);
     }
 
     window.addEventListener('scroll', updateNavStyle, { passive: true });
@@ -1380,13 +1419,11 @@
 
     /* ── Mobile menu ───────────────────────────────────────────── */
     (function () {
-      const menu     = document.getElementById('mobile-menu');
-      const openBtn  = document.getElementById('burger-btn');
+      const menu    = document.getElementById('mobile-menu');
+      const openBtn = document.getElementById('burger-btn');
       const closeBtn = document.getElementById('menu-close-btn');
-
       const open  = () => { menu.classList.add('open');    document.body.style.overflow = 'hidden'; };
       const close = () => { menu.classList.remove('open'); document.body.style.overflow = ''; };
-
       openBtn.addEventListener('click', open);
       closeBtn.addEventListener('click', close);
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
@@ -1421,34 +1458,28 @@
 
 
     /* ── Hash router ───────────────────────────────────────────── */
-    const PAGES     = ['home', 'about', 'portfolio', 'news', 'contact'];
-    const navLinks  = document.querySelectorAll('.nav__links a, .mobile-menu__links a');
+    const PAGES    = ['home','about','portfolio','news','contact'];
+    const navLinks = document.querySelectorAll('.nav__links a, .mobile-menu__links a');
 
     function showPage(hash) {
-      const id = (hash.replace('#', '') || 'home');
+      const id      = (hash.replace('#', '') || 'home');
       const validId = PAGES.includes(id) ? id : 'home';
 
-      // Swap pages
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       const target = document.getElementById('page-' + validId);
       if (target) target.classList.add('active');
 
-      // Scroll to top
       window.scrollTo(0, 0);
 
-      // Active nav link
       navLinks.forEach(a => {
-        const href = a.getAttribute('href');
-        a.classList.toggle('active', href === '#' + validId);
+        a.classList.toggle('active', a.getAttribute('href') === '#' + validId);
       });
 
-      // Nav style
       updateNavStyle();
     }
 
     window.addEventListener('hashchange', () => showPage(window.location.hash));
 
-    // Boot
     renderNewsPreview();
     renderNewsFull();
     showPage(window.location.hash || '#home');
