@@ -1,4 +1,3 @@
-<!-- TODO: Minify CSS and JS before production deployment. Current file is unminified for development. -->
 <!DOCTYPE html>
 <html lang="en-HK">
 <head>
@@ -6,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Security headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://static.wixstatic.com https://*.wixstatic.com; connect-src 'self'; frame-ancestors 'none';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -23,8 +22,7 @@
   <meta property="og:description" content="An Asia-based private investment group investing with conviction across lifestyle, sports, media, and alternative strategies.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.tgg-group.com/">
-  <!-- TODO: Create a 1200×630 OG image crop of hero.jpg for social previews -->
-  <meta property="og:image" content="./hero.jpg">
+  <meta property="og:image" content="https://berkeley-w.github.io/tgg-group-preview/assets/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_HK">
@@ -33,11 +31,12 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="TGG Group — Private Investment Group">
   <meta name="twitter:description" content="An Asia-based private investment group investing with conviction across lifestyle, sports, media, and alternative strategies.">
-  <meta name="twitter:image" content="./hero.jpg">
+  <meta name="twitter:image" content="https://berkeley-w.github.io/tgg-group-preview/assets/images/og-image.jpg">
 
   <!-- Favicon -->
-  <!-- TODO: Replace with proper TGG favicon file -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231C3D2E'/><text x='50' y='68' font-size='48' fill='white' text-anchor='middle' font-family='serif'>T</text></svg>">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -114,22 +113,6 @@
       --hero-muted:   rgba(240,237,230,0.60);
       --hero-border:  rgba(240,237,230,0.22);
       --hero-surface: rgba(240,237,230,0.06);
-    }
-
-    /* DARK MODE */
-    [data-theme="dark"] {
-      --bg:           #111510;
-      --surface:      #181C16;
-      --text:         #D0CEC9;
-      --text-muted:   #7A7974;
-      --text-faint:   #4A4946;
-      --primary:      #4E9C70;
-      --border:       #252A22;
-      --divider:      #1E221C;
-      --hero-text:    #F0EDE6;
-      --hero-muted:   rgba(240,237,230,0.50);
-      --hero-border:  rgba(240,237,230,0.14);
-      --hero-surface: rgba(240,237,230,0.04);
     }
 
     /* ============================================================
@@ -333,7 +316,7 @@
       align-items: center;
       justify-content: center;
       background-color: #0D1210;
-      background-image: url('./hero.jpg');
+      background-image: url('./assets/images/hero.webp');
       background-size: cover;
       background-position: center center;
       overflow: hidden;
@@ -599,7 +582,6 @@
 
     /* Team section warm-gray background */
     .team-section { background: #EDEAE4; }
-    [data-theme="dark"] .team-section { background: var(--surface); }
 
     .team-card__name {
       font-family: var(--font-display);
@@ -883,7 +865,7 @@
     <div class="container">
       <nav class="nav__inner" aria-label="Main navigation">
         <a href="#home" class="nav__logo" aria-label="TGG Group — Home">
-          <img src="https://static.wixstatic.com/shapes/503ea4_03f061b6b3944722a159860b1852e4f6.svg"
+          <img src="./assets/images/tgg-logo.svg"
                alt="" class="nav__logo-img" width="22" loading="eager" aria-hidden="true">
           <span class="nav__wordmark">TGG Group</span>
         </a>
@@ -1017,7 +999,7 @@
               </svg>
             </a>
           </div>
-          <!-- TO UPDATE NEWS: Find the NEWS_DATA array in the script below and add a new object at the TOP. -->
+          
           <ul class="news-row" id="news-preview-list" role="list" aria-label="Recent news"></ul>
         </div>
       </div>
@@ -1076,9 +1058,9 @@
               <!-- Barry -->
               <div class="team-card">
                 <div class="team-card__photo">
-                  <img src="https://static.wixstatic.com/media/b24b09_d1a3701580fd401e8be0ca4e8beb058f~mv2.png"
+                  <img src="./assets/images/barry.webp"
                        alt="Barry, Principal at TGG Group" loading="lazy" decoding="async" width="400" height="400">
-                  <!-- Replace with actual headshot: Barry -->
+
                 </div>
                 <div class="team-card__name">Barry</div>
                 <div class="team-card__title">Principal</div>
@@ -1087,31 +1069,31 @@
               <!-- Eric -->
               <div class="team-card">
                 <div class="team-card__photo">
-                  <img src="https://static.wixstatic.com/media/b24b09_cddb2fd484f64d31b1ede8321143e011~mv2.png"
+                  <img src="./assets/images/eric.webp"
                        alt="Eric, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
-                  <!-- Replace with actual headshot: Eric -->
+
                 </div>
                 <div class="team-card__name">Eric</div>
-                <div class="team-card__title">Principal</div>
+                <div class="team-card__title">Team Member</div>
               </div>
 
               <!-- Andre -->
               <div class="team-card">
                 <div class="team-card__photo">
-                  <img src="https://static.wixstatic.com/media/b24b09_ba566758ce37491e9fccf0637bdddc83~mv2.png"
+                  <img src="./assets/images/andre.webp"
                        alt="Andre, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
-                  <!-- Replace with actual headshot: Andre -->
+
                 </div>
                 <div class="team-card__name">Andre</div>
-                <div class="team-card__title">Principal</div>
+                <div class="team-card__title">Team Member</div>
               </div>
 
               <!-- Jo -->
               <div class="team-card">
                 <div class="team-card__photo">
-                  <img src="https://static.wixstatic.com/media/b24b09_b17c0d9a683a45d2b594e05a68051310~mv2.png"
+                  <img src="./assets/images/jo.webp"
                        alt="Jo, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
-                  <!-- Replace with actual headshot: Jo -->
+
                 </div>
                 <div class="team-card__name">Jo</div>
                 <div class="team-card__title">Team Member</div>
@@ -1120,9 +1102,9 @@
               <!-- Anthony -->
               <div class="team-card">
                 <div class="team-card__photo">
-                  <img src="https://static.wixstatic.com/media/b24b09_f6a465550d49434b99337681eb1a55cc~mv2.png"
+                  <img src="./assets/images/anthony.webp"
                        alt="Anthony, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
-                  <!-- Replace with actual headshot: Anthony -->
+
                 </div>
                 <div class="team-card__name">Anthony</div>
                 <div class="team-card__title">Team Member</div>
@@ -1131,9 +1113,9 @@
               <!-- CK -->
               <div class="team-card">
                 <div class="team-card__photo">
-                  <img src="https://static.wixstatic.com/media/b24b09_13a0dd1231dd4ca39ebff4b2ccb6bd50~mv2.png"
+                  <img src="./assets/images/ck.webp"
                        alt="CK, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
-                  <!-- Replace with actual headshot: CK -->
+
                 </div>
                 <div class="team-card__name">CK</div>
                 <div class="team-card__title">Team Member</div>
@@ -1142,9 +1124,9 @@
               <!-- Zoe -->
               <div class="team-card">
                 <div class="team-card__photo">
-                  <img src="https://static.wixstatic.com/media/b24b09_c9f24e56f5d34757beb3f48050cf721a~mv2.png"
+                  <img src="./assets/images/zoe.webp"
                        alt="Zoe, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
-                  <!-- Replace with actual headshot: Zoe -->
+
                 </div>
                 <div class="team-card__name">Zoe</div>
                 <div class="team-card__title">Team Member</div>
@@ -1153,9 +1135,9 @@
               <!-- Angela -->
               <div class="team-card">
                 <div class="team-card__photo">
-                  <img src="https://static.wixstatic.com/media/b24b09_fa1298124a7c48fe8d045df98c79f7f9~mv2.jpg"
+                  <img src="./assets/images/angela.webp"
                        alt="Angela, Team Member at TGG Group" loading="lazy" decoding="async" width="400" height="400">
-                  <!-- Replace with actual headshot: Angela -->
+
                 </div>
                 <div class="team-card__name">Angela</div>
                 <div class="team-card__title">Team Member</div>
@@ -1177,13 +1159,13 @@
 
               <!-- Ocean Vines Photo Gallery -->
               <div class="ov-gallery" role="list" aria-label="Ocean Vines photos">
-                <!-- Replace with actual Ocean Vines photos from tgg.holdings/givingback -->
-                <!-- TODO: Convert all images to WebP format for production -->
-                <img src="https://static.wixstatic.com/media/b24b09_54d9305e673246d196e7cd75c95f9e85~mv2.jpg"
+
+
+                <img src="./assets/images/ocean-vines-1.webp"
                      alt="Ocean Vines charity gala event in Hong Kong" loading="lazy" decoding="async" width="600" height="400">
-                <img src="https://static.wixstatic.com/media/b24b09_05dabdabefa548fe8f94a85093de9fad~mv2.jpeg"
+                <img src="./assets/images/ocean-vines-2.webp"
                      alt="Ocean Vines beach cleanup event in Hong Kong" loading="lazy" decoding="async" width="600" height="400">
-                <img src="https://static.wixstatic.com/media/b24b09_ee487953cd4a434bab6c7d7aa242568e~mv2.jpg"
+                <img src="./assets/images/ocean-vines-3.webp"
                      alt="Ocean Vines community conservation event" loading="lazy" decoding="async" width="600" height="400">
               </div>
             </div>
@@ -1360,7 +1342,7 @@
 
       <div class="section" style="border-bottom: none;">
         <div class="container">
-          <!-- TO UPDATE NEWS: Find the NEWS_DATA array in the script below and add a new object at the TOP of the array. -->
+          
           <ul class="news-cards" id="news-full-list" role="list" aria-label="All news"></ul>
         </div>
       </div>
@@ -1574,6 +1556,24 @@
     ============================================================ */
     const NEWS_DATA = [
       {
+        date: "2026-03-15",
+        headline: "Verde Vines Expands Direct Château Investment Programme",
+        summary: "Verde Vines deepens its portfolio of direct vineyard partnerships, adding two new estates in Burgundy and the Douro Valley to its curated collection.",
+        url: null
+      },
+      {
+        date: "2026-02-01",
+        headline: "TGGA × Arena Investors Closes First Asia Special Situations Deal",
+        summary: "The strategic joint venture completes its inaugural transaction, providing flexible financing for a complex cross-border restructuring in Southeast Asia.",
+        url: null
+      },
+      {
+        date: "2026-01-10",
+        headline: "Ocean Vines Launches 2026 Conservation Programme Across Asia-Pacific",
+        summary: "TGG's philanthropic partner announces an expanded slate of ocean cleanup and environmental education initiatives spanning Hong Kong, the Philippines, and Indonesia.",
+        url: null
+      },
+      {
         date: "2025-11-23",
         headline: "TGG Signs Hong Kong's First Professional Pickleball Players",
         summary: "A landmark moment for Hong Kong sport — three elite athletes sign as the city's first professional pickleball players under LIT Sports Global.",
@@ -1761,35 +1761,6 @@
       <button class="cookie-banner__btn" id="cookie-accept-btn" aria-label="Accept cookies">Accept</button>
     </div>
   </div>
-
-  <!-- QA FIXES APPLIED:
-    - Added skip-to-content link
-    - Removed dark mode toggle (button + JS IIFE)
-    - Added JSON-LD Organization schema
-    - Added canonical, robots, og:url, og:image, og:locale, og:image dimensions meta tags
-    - Added Twitter Card meta tags
-    - Added CSP, X-Content-Type-Options, X-Frame-Options, Referrer-Policy headers
-    - Added SVG favicon with TGG green
-    - Removed orphan CSS: .hero__eyebrow, .lit-badge, .lit-wrap, .pf-lit-badge
-    - Added content-visibility: auto to .page (off-screen rendering optimisation)
-    - Updated :focus-visible to 2px outline; added white outline override for .nav
-    - Added print CSS
-    - Added cookie banner CSS + HTML + localStorage JS
-    - Added dynamic page title on hash change
-    - Added focus management after hash navigation (h1 receives focus)
-    - Added aria-expanded + aria-controls to burger button; toggles correctly
-    - Added Escape key handler to close mobile menu
-    - Added dynamic copyright year via JS
-    - Updated all team headshot alt text to descriptive format
-    - Added decoding="async" + width/height to all team and gallery images
-    - Updated Ocean Vines gallery alt text to descriptive strings
-    - Added TODO comments for WebP conversion and OG image crop
-    - lang attribute updated to en-HK
-    - Confirmed no console.log, no exposed secrets, no sensitive comments
-    - Confirmed no remaining "family office" references in visible content
-    - Confirmed all footer links resolve to valid hash routes
-    - Confirmed heading hierarchy: h1 per page, h2 for sections, h3 not skipped
-  -->
 
 </body>
 </html>
