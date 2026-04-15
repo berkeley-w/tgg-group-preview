@@ -441,22 +441,20 @@
       color: rgba(255,255,255,0.55); border-bottom-color: rgba(255,255,255,0.18);
     }
     .preview-section .logo-chip {
-      background: rgba(255,255,255,0.95);
-      border: none;
-      color: var(--text-muted);
-      border-radius: 8px;
-      min-height: 60px;
-      padding: var(--space-3) var(--space-6);
+      background: none; border: none;
+      color: rgba(255,255,255,0.75);
+      font-size: var(--text-lg);
     }
     .preview-section .logo-chip:hover {
-      background: #fff;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      color: rgba(255,255,255,0.95);
     }
     .chip-logo {
-      height: 50px; width: auto; max-width: 170px;
+      height: 55px; width: auto; max-width: 200px;
       object-fit: contain; display: block;
+      opacity: 0.85;
+      transition: opacity var(--transition);
     }
+    .logo-chip:hover .chip-logo { opacity: 1; }
 
     .preview-section__header {
       display: flex; align-items: baseline; justify-content: space-between;
@@ -473,22 +471,20 @@
       border-bottom: 1px solid var(--divider); margin-bottom: var(--space-3);
     }
 
-    .logo-row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+    .logo-row {
+      display: flex; flex-wrap: wrap;
+      gap: var(--space-8) var(--space-10);
+      align-items: center;
+    }
 
     .logo-chip {
       flex: 0 0 auto;
-      border: none;
-      background: rgba(255,255,255,0.95);
-      border-radius: 8px;
-      padding: var(--space-3) var(--space-6);
-      min-height: 60px;
-      display: flex; align-items: center; justify-content: center;
+      background: none; border: none; padding: 0;
+      display: flex; align-items: center;
       font-family: var(--font-display);
-      font-size: var(--text-sm); font-weight: 400;
+      font-size: var(--text-base); font-weight: 400;
       color: var(--text-muted); letter-spacing: 0.02em;
-      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
     }
-    .logo-chip:hover { background: #fff; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
 
     /* ============================================================
        HOME — NEWS PREVIEW
@@ -971,9 +967,9 @@
           <div class="sector-block">
             <div class="sector-label">Lifestyle &amp; Dining</div>
             <div class="logo-row">
-              <div class="logo-chip"><img src="./assets/images/logos/aap-ba-din.webp" alt="Aap Ba Din" class="chip-logo"></div>
+              <div class="logo-chip"><img src="./assets/images/logos/aap-ba-din-white.webp" alt="Aap Ba Din" class="chip-logo"></div>
               <div class="logo-chip"><img src="./assets/images/logos/verde-vines.webp" alt="Verde Vines" class="chip-logo"></div>
-              <div class="logo-chip"><img src="./assets/images/logos/lit-by-larry.webp" alt="Lit by Larry" class="chip-logo"></div>
+              <div class="logo-chip"><img src="./assets/images/logos/lit-by-larry-white.webp" alt="Lit by Larry" class="chip-logo"></div>
               <div class="logo-chip">SAGA Lounge</div>
             </div>
           </div>
@@ -981,8 +977,8 @@
           <div class="sector-block">
             <div class="sector-label">Sports</div>
             <div class="logo-row">
-              <div class="logo-chip"><img src="./assets/images/logos/lit-sports-global.webp" alt="LIT Sports Global" class="chip-logo"></div>
-              <div class="logo-chip"><img src="./assets/images/logos/lit-tlp.webp" alt="LIT TLP" class="chip-logo"></div>
+              <div class="logo-chip"><img src="./assets/images/logos/lit-sports-global-white.webp" alt="LIT Sports Global" class="chip-logo"></div>
+              <div class="logo-chip"><img src="./assets/images/logos/lit-tlp-white.webp" alt="LIT TLP" class="chip-logo"></div>
             </div>
           </div>
 
@@ -990,14 +986,14 @@
             <div class="sector-label">Media &amp; Technology</div>
             <div class="logo-row">
               <div class="logo-chip">LIT Media Group</div>
-              <div class="logo-chip"><img src="./assets/images/logos/lit-creative-moments.webp" alt="LIT Creative Moments" class="chip-logo"></div>
+              <div class="logo-chip"><img src="./assets/images/logos/lit-creative-moments-white.webp" alt="LIT Creative Moments" class="chip-logo"></div>
             </div>
           </div>
 
           <div class="sector-block">
             <div class="sector-label">Alternative Investments</div>
             <div class="logo-row">
-              <div class="logo-chip"><img src="./assets/images/logos/arena-investors.webp" alt="TGGA × Arena Investors" class="chip-logo"></div>
+              <div class="logo-chip"><img src="./assets/images/logos/arena-investors-white.webp" alt="TGGA × Arena Investors" class="chip-logo"></div>
             </div>
           </div>
         </div>
