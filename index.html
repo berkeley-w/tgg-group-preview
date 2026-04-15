@@ -217,9 +217,8 @@
     .nav--solid .nav__logo { color: #fff; }
 
     .nav__logo-img {
-      height: 20px;
+      height: 24px;
       width: auto;
-      filter: brightness(0) invert(1);
       transition: opacity var(--transition);
       display: block;
     }
@@ -665,6 +664,11 @@
     }
     .pf-card:hover .pf-card__mono { border-color: var(--text-faint); }
 
+    .pf-card__logo {
+      height: 48px; width: auto; max-width: 120px;
+      object-fit: contain; margin-bottom: var(--space-5);
+    }
+
     .pf-card__mono span {
       font-family: var(--font-display);
       font-size: 1.1rem; font-weight: 400;
@@ -865,8 +869,8 @@
     <div class="container">
       <nav class="nav__inner" aria-label="Main navigation">
         <a href="#home" class="nav__logo" aria-label="TGG Group — Home">
-          <img src="./assets/images/tgg-logo.svg"
-               alt="" class="nav__logo-img" width="22" loading="eager" aria-hidden="true">
+          <img src="./assets/images/logos/tgg-white.png"
+               alt="" class="nav__logo-img" width="30" loading="eager" aria-hidden="true">
           <span class="nav__wordmark">TGG Group</span>
         </a>
 
@@ -956,10 +960,9 @@
             <div class="sector-label">Lifestyle &amp; Dining</div>
             <div class="logo-row">
               <div class="logo-chip">Aap Ba Din</div>
-              <div class="logo-chip">Tempura Taki</div>
               <div class="logo-chip">Verde Vines</div>
               <div class="logo-chip">Lit by Larry</div>
-              <div class="logo-chip">Casa Dao</div>
+              <div class="logo-chip">SAGA Lounge</div>
             </div>
           </div>
 
@@ -967,7 +970,7 @@
             <div class="sector-label">Sports</div>
             <div class="logo-row">
               <div class="logo-chip">LIT Sports Global</div>
-              <div class="logo-chip">TLP Pickleball Club</div>
+              <div class="logo-chip">LIT TLP</div>
             </div>
           </div>
 
@@ -975,6 +978,7 @@
             <div class="sector-label">Media &amp; Technology</div>
             <div class="logo-row">
               <div class="logo-chip">LIT Media Group</div>
+              <div class="logo-chip">LIT Creative Moments</div>
             </div>
           </div>
 
@@ -1214,35 +1218,26 @@
           <div class="pf-grid">
 
             <div class="pf-card">
-              <div class="pf-card__mono"><span>A</span></div>
+              <img class="pf-card__logo" src="./assets/images/logos/aap-ba-din.webp" alt="Aap Ba Din logo" loading="lazy" decoding="async">
               <h3 class="pf-card__name">Aap Ba Din</h3>
               <p class="pf-card__desc">Blends traditional Cantonese cuisine with innovative techniques, offering personalised menus crafted for each occasion.</p>
             </div>
-
             <div class="pf-card">
-              <div class="pf-card__mono"><span>T</span></div>
-              <h3 class="pf-card__name">Tempura Taki</h3>
-              <p class="pf-card__desc">A tempura omakase concept featuring Japanese flavours, organic products, and detailed cooking skills in a relaxed setting.</p>
-            </div>
-
-            <div class="pf-card">
-              <div class="pf-card__mono"><span>V</span></div>
+              <img class="pf-card__logo" src="./assets/images/logos/verde-vines.webp" alt="Verde Vines logo" loading="lazy" decoding="async">
               <h3 class="pf-card__name">Verde Vines</h3>
               <p class="pf-card__desc">A curated collection of exquisite beverages, focused on uniqueness and quality, often investing directly in the Chateau or domain.</p>
             </div>
 
             <div class="pf-card">
-              <div class="pf-card__mono"><span>L</span></div>
+              <img class="pf-card__logo" src="./assets/images/logos/lit-by-larry.webp" alt="Lit by Larry logo" loading="lazy" decoding="async">
               <h3 class="pf-card__name">Lit by Larry</h3>
               <p class="pf-card__desc">Where tradition and generations of craftsmanship meet innovation, creating unique visions of jewellery art with creative freedom.</p>
             </div>
-
             <div class="pf-card">
-              <div class="pf-card__mono"><span>C</span></div>
-              <h3 class="pf-card__name">Casa Dao</h3>
-              <p class="pf-card__desc">A bespoke events venue destination in Hong Kong, hosting cultural and philanthropic gatherings.</p>
+              <div class="pf-card__mono"><span>S</span></div>
+              <h3 class="pf-card__name">SAGA Lounge</h3>
+              <p class="pf-card__desc">An upscale lounge offering signature cocktails, private events, and vibrant nightlife experiences including guest DJ performances and live entertainment.</p>
             </div>
-
           </div>
         </div>
       </div>
@@ -1257,15 +1252,15 @@
           <div class="pf-grid">
 
             <div class="pf-card">
-              <div class="pf-card__mono"><span>LS</span></div>
+              <img class="pf-card__logo" src="./assets/images/logos/lit-sports-global.webp" alt="LIT Sports Global logo" loading="lazy" decoding="async">
               <h3 class="pf-card__name">LIT Sports Global</h3>
               <p class="pf-card__desc">Using sport as a platform to enhance grit, perseverance, and teamwork, with a focus on pickleball and inclusive sporting culture.</p>
             </div>
 
             <div class="pf-card">
-              <div class="pf-card__mono"><span>TL</span></div>
-              <h3 class="pf-card__name">TLP Pickleball Club</h3>
-              <p class="pf-card__desc">The longest-running pickleball club in Hong Kong, now home to the city's first professional pickleball players.</p>
+              <img class="pf-card__logo" src="./assets/images/logos/lit-tlp.webp" alt="LIT TLP logo" loading="lazy" decoding="async">
+              <h3 class="pf-card__name">LIT TLP</h3>
+              <p class="pf-card__desc">Hong Kong's premier pickleball venture, combining the longest-running club in the city with professional athlete management under LIT Sports Global.</p>
             </div>
 
           </div>
@@ -1282,9 +1277,14 @@
           <div class="pf-grid">
 
             <div class="pf-card">
-              <div class="pf-card__mono"><span>LM</span></div>
+              <img class="pf-card__logo" src="./assets/images/logos/lit-media.webp" alt="LIT Media Group logo" loading="lazy" decoding="async">
               <h3 class="pf-card__name">LIT Media Group</h3>
               <p class="pf-card__desc">A dynamic team of creative artists dedicated to discovering talent and shaping the future of entertainment across music, film, and global collaborations.</p>
+            </div>
+            <div class="pf-card">
+              <img class="pf-card__logo" src="./assets/images/logos/lit-creative-moments.webp" alt="LIT Creative Moments logo" loading="lazy" decoding="async">
+              <h3 class="pf-card__name">LIT Creative Moments</h3>
+              <p class="pf-card__desc">A creative production venture under the LIT brand, delivering innovative content and experiential programming.</p>
             </div>
 
           </div>
