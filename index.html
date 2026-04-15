@@ -443,7 +443,9 @@
     .preview-section .logo-chip {
       background: none; border: none;
       color: rgba(255,255,255,0.75);
-      font-size: var(--text-lg);
+      font-size: var(--text-base);
+      height: 55px;
+      letter-spacing: 0.06em;
     }
     .preview-section .logo-chip:hover {
       color: rgba(255,255,255,0.95);
@@ -623,6 +625,16 @@
       transition: filter 0.3s ease;
     }
     .ov-gallery img:hover { filter: grayscale(0%); }
+
+    .ov-gallery__logo {
+      display: flex; align-items: center; justify-content: center;
+      background: var(--surface); border-radius: 4px;
+      padding: var(--space-4);
+    }
+    .ov-gallery__logo img {
+      width: 100%; height: auto; max-height: 180px;
+      object-fit: contain; filter: none;
+    }
 
     /* ============================================================
        PORTFOLIO — CARDS
@@ -968,7 +980,7 @@
             <div class="sector-label">Lifestyle &amp; Dining</div>
             <div class="logo-row">
               <div class="logo-chip"><img src="./assets/images/logos/aap-ba-din-white.webp" alt="Aap Ba Din" class="chip-logo"></div>
-              <div class="logo-chip"><img src="./assets/images/logos/verde-vines.webp" alt="Verde Vines" class="chip-logo"></div>
+              <div class="logo-chip"><img src="./assets/images/logos/verde-vines-white.webp" alt="Verde Vines" class="chip-logo"></div>
               <div class="logo-chip"><img src="./assets/images/logos/lit-by-larry-white.webp" alt="Lit by Larry" class="chip-logo"></div>
               <div class="logo-chip">SAGA Lounge</div>
             </div>
@@ -1171,14 +1183,14 @@
 
               <!-- Ocean Vines Photo Gallery -->
               <div class="ov-gallery" role="list" aria-label="Ocean Vines photos">
-
-
+                <div class="ov-gallery__logo">
+                  <img src="./assets/images/logos/ocean-vines-full.webp"
+                       alt="Ocean Vines — Combining Fun with Conservation" loading="lazy" decoding="async">
+                </div>
                 <img src="./assets/images/ocean-vines-1.webp"
                      alt="Ocean Vines charity gala event in Hong Kong" loading="lazy" decoding="async" width="600" height="400">
                 <img src="./assets/images/ocean-vines-2.webp"
                      alt="Ocean Vines beach cleanup event in Hong Kong" loading="lazy" decoding="async" width="600" height="400">
-                <img src="./assets/images/ocean-vines-3.webp"
-                     alt="Ocean Vines community conservation event" loading="lazy" decoding="async" width="600" height="400">
               </div>
             </div>
           </div>
@@ -1285,7 +1297,7 @@
           <div class="pf-grid">
 
             <div class="pf-card">
-              <img class="pf-card__logo" src="./assets/images/logos/lit-media.webp" alt="LIT Media Group logo" loading="lazy" decoding="async">
+              <img class="pf-card__logo" src="./assets/images/logos/lit-media-clean.webp" alt="LIT Media Group logo" loading="lazy" decoding="async">
               <h3 class="pf-card__name">LIT Media Group</h3>
               <p class="pf-card__desc">A dynamic team of creative artists dedicated to discovering talent and shaping the future of entertainment across music, film, and global collaborations.</p>
             </div>
