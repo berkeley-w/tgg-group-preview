@@ -217,10 +217,11 @@
     .nav--solid .nav__logo { color: #fff; }
 
     .nav__logo-img {
-      height: 24px;
+      height: 30px;
       width: auto;
       transition: opacity var(--transition);
       display: block;
+      transform: translateY(-2px);
     }
     .nav__logo:hover .nav__logo-img { opacity: 0.7; }
 
@@ -449,6 +450,14 @@
       border-color: rgba(255,255,255,0.45);
       color: #fff;
     }
+    .chip-logo {
+      height: 34px; width: auto; max-width: 140px;
+      object-fit: contain; display: block;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+      transition: opacity var(--transition);
+    }
+    .logo-chip:hover .chip-logo { opacity: 1; }
 
     .preview-section__header {
       display: flex; align-items: baseline; justify-content: space-between;
@@ -959,9 +968,9 @@
           <div class="sector-block">
             <div class="sector-label">Lifestyle &amp; Dining</div>
             <div class="logo-row">
-              <div class="logo-chip">Aap Ba Din</div>
-              <div class="logo-chip">Verde Vines</div>
-              <div class="logo-chip">Lit by Larry</div>
+              <div class="logo-chip"><img src="./assets/images/logos/aap-ba-din.webp" alt="Aap Ba Din" class="chip-logo"></div>
+              <div class="logo-chip"><img src="./assets/images/logos/verde-vines.webp" alt="Verde Vines" class="chip-logo"></div>
+              <div class="logo-chip"><img src="./assets/images/logos/lit-by-larry.webp" alt="Lit by Larry" class="chip-logo"></div>
               <div class="logo-chip">SAGA Lounge</div>
             </div>
           </div>
@@ -969,23 +978,23 @@
           <div class="sector-block">
             <div class="sector-label">Sports</div>
             <div class="logo-row">
-              <div class="logo-chip">LIT Sports Global</div>
-              <div class="logo-chip">LIT TLP</div>
+              <div class="logo-chip"><img src="./assets/images/logos/lit-sports-global.webp" alt="LIT Sports Global" class="chip-logo"></div>
+              <div class="logo-chip"><img src="./assets/images/logos/lit-tlp.webp" alt="LIT TLP" class="chip-logo"></div>
             </div>
           </div>
 
           <div class="sector-block">
             <div class="sector-label">Media &amp; Technology</div>
             <div class="logo-row">
-              <div class="logo-chip">LIT Media Group</div>
-              <div class="logo-chip">LIT Creative Moments</div>
+              <div class="logo-chip"><img src="./assets/images/logos/lit-media.webp" alt="LIT Media Group" class="chip-logo"></div>
+              <div class="logo-chip"><img src="./assets/images/logos/lit-creative-moments.webp" alt="LIT Creative Moments" class="chip-logo"></div>
             </div>
           </div>
 
           <div class="sector-block">
             <div class="sector-label">Alternative Investments</div>
             <div class="logo-row">
-              <div class="logo-chip">TGGA × Arena Investors</div>
+              <div class="logo-chip"><img src="./assets/images/logos/arena-investors.webp" alt="TGGA × Arena Investors" class="chip-logo"></div>
             </div>
           </div>
         </div>
@@ -1301,7 +1310,7 @@
           <div class="pf-grid">
 
             <div class="pf-card">
-              <div class="pf-card__mono"><span>TA</span></div>
+              <img class="pf-card__logo" src="./assets/images/logos/arena-investors.webp" alt="Arena Investors logo" loading="lazy" decoding="async">
               <h3 class="pf-card__name">TGGA × Arena Investors</h3>
               <p class="pf-card__desc">A strategic joint venture with Arena Investors, offering innovative and flexible financing solutions for complex special situations across Asia.</p>
             </div>
