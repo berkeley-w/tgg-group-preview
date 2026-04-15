@@ -475,7 +475,7 @@
 
     .logo-row {
       display: flex; flex-wrap: wrap;
-      gap: var(--space-8) var(--space-10);
+      gap: var(--space-6);
       align-items: center;
     }
 
@@ -695,6 +695,13 @@
       color: var(--text-muted); letter-spacing: 0.04em;
     }
 
+    .pf-card__name a {
+      color: inherit; text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition);
+    }
+    .pf-card__name a:hover { border-bottom-color: var(--primary); }
+
     .pf-card__name {
       font-family: var(--font-display);
       font-size: var(--text-lg); font-weight: 400;
@@ -789,7 +796,8 @@
       display: flex; align-items: center; gap: var(--space-3);
     }
     .footer__logo {
-      height: 22px; width: auto; display: block;
+      height: 20px; width: auto; display: block;
+      transform: translateY(-1px);
     }
 
     .footer__copy {
@@ -1183,7 +1191,7 @@
             <h2 class="prose-block__heading">Stewardship</h2>
             <div class="prose-block__body">
               <p>As stewards of the resources we have been granted, we believe it is our responsibility to ensure they are wisely allocated for the most impactful returns — financial and otherwise. TGG actively supports NGOs and charitable causes aligned with this commitment.</p>
-              <p>Our primary philanthropic partner is <strong>Ocean Vines</strong>, an NGO dedicated to ocean advocacy and education. We support ocean cleanup initiatives, environmental education programmes, and conservation events across Hong Kong and the Asia-Pacific region. Because of our ocean's importance to our planet and to future generations, we consider this work a core part of building for The Greatest Good.</p>
+              <p>Our primary philanthropic partner is <strong><a href="https://www.instagram.com/ocean_vines/" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">Ocean Vines</a></strong>, an NGO dedicated to ocean advocacy and education. We support ocean cleanup initiatives, environmental education programmes, and conservation events across Hong Kong and the Asia-Pacific region. Because of our ocean's importance to our planet and to future generations, we consider this work a core part of building for The Greatest Good.</p>
 
               <!-- Ocean Vines Photo Gallery -->
               <div class="ov-gallery" role="list" aria-label="Ocean Vines photos">
@@ -1243,12 +1251,12 @@
 
             <div class="pf-card">
               <img class="pf-card__logo" src="./assets/images/logos/aap-ba-din.webp" alt="Aap Ba Din logo" loading="lazy" decoding="async">
-              <h3 class="pf-card__name">Aap Ba Din</h3>
+              <h3 class="pf-card__name"><a href="https://www.aapbadin.com" target="_blank" rel="noopener noreferrer">Aap Ba Din</a></h3>
               <p class="pf-card__desc">Blends traditional Cantonese cuisine with innovative techniques, offering personalised menus crafted for each occasion.</p>
             </div>
             <div class="pf-card">
               <img class="pf-card__logo" src="./assets/images/logos/verde-vines.webp" alt="Verde Vines logo" loading="lazy" decoding="async">
-              <h3 class="pf-card__name">Verde Vines</h3>
+              <h3 class="pf-card__name"><a href="https://verde-vines.com/" target="_blank" rel="noopener noreferrer">Verde Vines</a></h3>
               <p class="pf-card__desc">A curated collection of exquisite beverages, focused on uniqueness and quality, often investing directly in the Chateau or domain.</p>
             </div>
 
@@ -1259,7 +1267,7 @@
             </div>
             <div class="pf-card">
               <div class="pf-card__mono"><span>S</span></div>
-              <h3 class="pf-card__name">SAGA Lounge</h3>
+              <h3 class="pf-card__name"><a href="https://www.instagram.com/sagalounge.hk/" target="_blank" rel="noopener noreferrer">SAGA Lounge</a></h3>
               <p class="pf-card__desc">An upscale lounge offering signature cocktails, private events, and vibrant nightlife experiences including guest DJ performances and live entertainment.</p>
             </div>
           </div>
@@ -1277,7 +1285,7 @@
 
             <div class="pf-card">
               <img class="pf-card__logo" src="./assets/images/logos/lit-sports-global.webp" alt="LIT Sports Global logo" loading="lazy" decoding="async">
-              <h3 class="pf-card__name">LIT Sports Global</h3>
+              <h3 class="pf-card__name"><a href="https://www.instagram.com/lit_sports_global" target="_blank" rel="noopener noreferrer">LIT Sports Global</a></h3>
               <p class="pf-card__desc">Using sport as a platform to enhance grit, perseverance, and teamwork, with a focus on pickleball and inclusive sporting culture.</p>
             </div>
 
@@ -1301,7 +1309,7 @@
           <div class="pf-grid">
 
             <div class="pf-card">
-              <img class="pf-card__logo" src="./assets/images/logos/lit-media-clean.webp" alt="LIT Media Group logo" loading="lazy" decoding="async">
+              <img class="pf-card__logo" src="./assets/images/logos/lit-media-full.webp" alt="LIT Media Group logo" loading="lazy" decoding="async">
               <h3 class="pf-card__name">LIT Media Group</h3>
               <p class="pf-card__desc">A dynamic team of creative artists dedicated to discovering talent and shaping the future of entertainment across music, film, and global collaborations.</p>
             </div>
